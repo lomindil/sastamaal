@@ -1,53 +1,63 @@
 module.exports = async function search(page, { podId, query }) {
-    await page.setUserAgent(
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
-    );
+    
 
-    await page.goto("https://www.swiggy.com/instamart", { waitUntil: "networkidle2" });
+        await page.setUserAgent(
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
+        );
 
-    await page.waitForFunction(() => window.App && window.App.deviceId, { timeout: 15000 }).catch(() => {});
+        console.log("Visiting Instamart...");
+        await page.goto("https://www.swiggy.com/instamart", {
+            waitUntil: "networkidle2",
+			credentials: "include",
+            timeout: 30000
+        });
 
-    const session = await page.evaluate(() => {
-        const cookies = document.cookie.split(";").reduce((acc, kv) => {
-            const [k, v] = kv.split("=");
-            if (k) acc[k.trim()] = (v || "").trim();
-            return acc;
-        }, {});
-        return {
-            tid: cookies.tid || "",
-            sid: cookies.sid || "",
-            deviceId: window.App?.deviceId || "",
-            appVersion: window.App?.buildVersion || ""
-        };
-    });
+    console.log("Waiting for Instamart app initialization...");
+    await page.waitForFunction(() => window.App && window.App.deviceId, { timeout: 15000 });
+    const url = `https://www.swiggy.com/api/instamart/search/v2?offset=0&ageConsent=false&voiceSearchTrackingId=&storeId=${podId}&primaryStoreId=${podId}`;
 
-    const url = `https://www.swiggy.com/api/instamart/search/v2?offset=0&ageConsent=false&storeId=${podId}&primaryStoreId=${podId}`;
-
-    const body = {
-        facets: [],
-        sortAttribute: "",
-        query,
-        search_results_offset: "0",
-        page_type: "INSTAMART_AUTO_SUGGEST_PAGE",
-        is_pre_search_tag: false
+    const payload = {
+      facets: [],
+      sortAttribute: "",
+      query,                    // <--- change the search term here
+      search_results_offset: "0",
+      page_type: "INSTAMART_AUTO_SUGGEST_PAGE",
+      is_pre_search_tag: false
     };
 
-    const responseText = await page.evaluate(async (url, body, session) => {
-        const headers = {
-            "Content-Type": "application/json",
-            "Accept": "application/json, text/plain, */*",
-            "x-client-id": "INSTAMART-APP",
-            "x-platform": "web",
-            "x-tid": session.tid,
-            "x-device-id": session.deviceId,
-            "x-app-version": session.appVersion,
-            "Referer": "https://www.swiggy.com/instamart",
-            "Origin": "https://www.swiggy.com"
-        };
-        return await (await fetch(url, { method: "POST", headers, body: JSON.stringify(body), credentials: "include" })).text();
-    }, url, body, session);
+            const responseData = await page.evaluate(async (payload,url) => {
+            const headers = {
+                "Content-Type": "application/json",
+                "x-client-id": "INSTAMART-APP",
+                "x-platform": "web",
+                "Accept": "application/json, text/plain, */*"
+            };
 
-    const json = JSON.parse(responseText);
+            const res = await fetch(
+                url,
+                {
+                    method: "POST",
+                    headers,
+                    body: JSON.stringify(payload),
+                    credentials: "include"
+                }
+            );
+
+            const text = await res.text();
+
+            return {
+                status: res.status,
+                body: text
+            };
+        }, payload, url);
+
+    if (responseData.status !== 200) {
+        console.error("Swiggy API Request Failed:", responseData.status, "Response Text:", responseData.text);
+        // Throw an error or return an empty array if the API call failed
+        throw new Error(`API call failed with status ${responseData.status}. Response: ${responseData.text}`);
+    }
+
+    const json = JSON.parse(responseData.body);
 
     const items = [];
     function collect(obj) {
