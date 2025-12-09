@@ -75,6 +75,30 @@ module.exports = async function search(page, { podId, query }) {
         }
         collect(json);
 
+        function extractImageUrls(it) {
+            const variation = (it.variations && it.variations[0]) || {};
+
+            const possibleImages = [];
+
+            // 1. New Instamart-style array
+            if (Array.isArray(variation.imageIds)) {
+             possibleImages.push(...variation.imageIds);
+            }
+
+            if (Array.isArray(it.imageIds)) {
+                possibleImages.push(...it.imageIds);
+            }
+
+            // 2. Short imageId fields
+            if (it.imageId) possibleImages.push(it.imageId);
+            if (variation.imageId) possibleImages.push(variation.imageId);
+
+            // Normalize into full CDN URLs
+            return possibleImages.map(id =>
+                `https://media-assets.swiggy.com/swiggy/image/upload/${id}`
+                );
+            }
+
         // normalize single item into unified schema
         function normalizeItem(it) {
             const variation = (it.variations && it.variations[0]) || {};
@@ -91,9 +115,11 @@ module.exports = async function search(page, { podId, query }) {
                 quantity: variation.quantityDescription || variation.displayQuantity || "",
                 price: price,
                 offerPrice: offerPrice,
-                discount: discount
+                discount: discount,
+                images: extractImageUrls(it)  
             };
         }
+
 
     // normalize items
     const normalized = items.map(normalizeItem);
