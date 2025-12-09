@@ -57,6 +57,14 @@ module.exports = async function search(page, { podId, query }) {
         throw new Error(`API call failed with status ${responseData.status}. Response: ${responseData.text}`);
     }
 
+    const fs = require("fs");
+    const path = require("path");
+
+    // Save full raw response for debugging
+    const logFile = path.join(__dirname, "../../logs", `swiggy_search_${Date.now()}.json`);
+    fs.writeFileSync(logFile, responseData.body, "utf8");
+
+    console.log("Saved raw Swiggy search JSON ->", logFile);
     const json = JSON.parse(responseData.body);
 
     const items = [];
