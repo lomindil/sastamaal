@@ -1,0 +1,6 @@
+# Node.js dependencies
+backend/node_modules/
+puppeteer_scripts/node_modules/
+
+# JSON files in the log folder
+backend/log/*.json
