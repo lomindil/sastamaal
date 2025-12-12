@@ -5,27 +5,39 @@ const storeState = require("../state/storeState");
 
 router.post("/", async (req, res) => {
     try {
-        const { service, query } = req.body;
-        if (!service) return res.status(400).json({ success: false, error: "service required" });
-        if (!query) return res.status(400).json({ success: false, error: "query required" });
+        const { query } = req.body;
 
-        if (service === "swiggy") {
+        if (!query) {
+            return res.status(400).json({
+                success: false,
+                error: "query required"
+            });
+        }
+
+        const output = {
+            swiggy: { success: false, items: [] },
+            blinkit: { success: false, items: [] },
+            zepto: { success: false, items: [] }
+        };
+
             const podId = storeState.swiggy.podId;
             const items = await swiggyService.searchItems(podId, query);
-            // items are already normalized by swiggy search module
-            return res.json({ success: true, items });
-        }
-            // placeholders for other services
-        if (service === "blinkit" || service === "zepto") {
-            return res.json({ success: false, error: "service not implemented yet" });
-        }
+            output.swiggy = { success: true, items };
 
-        return res.status(400).json({ success: false, error: "unknown service" });
+
+            // items are already normalized by swiggy search module
+            return res.json(output);
+
+            // placeholders for other services
 
     } catch (err) {
-    console.error("search route error:", err);
-    return res.status(500).json({ success: false, error: err.message || "internal error" });
-  }
+        console.error("search route error:", err);
+            return res.status(500).json({
+            success: false,
+            error: err.message || "internal server error",
+            ...output
+        });
+    }
 });
 
 module.exports = router;
