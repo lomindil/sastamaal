@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
 
         const results = {
             swiggy: "failure",
+            bigbasket: "failure",
             blinkit: "not_implemented",
             zepto: "not_implemented"
         };
@@ -35,6 +36,8 @@ router.post("/", async (req, res) => {
         }
 
         // placeholder for other services
+        console.log("Calling Bigbasket Service for location Update\n");
+
         // not implemented yet, respond success:false (placeholder)
         return res.json(results);
 
