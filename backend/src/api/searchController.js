@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const swiggyService = require("../services/swiggyService");
 const storeState = require("../state/storeState");
+const requireAuth = require("../middleware/requireAuth");
 
-router.post("/", async (req, res) => {
+router.post("/", requireAuth, async (req, res) => {
     try {
         const { query } = req.body;
 
