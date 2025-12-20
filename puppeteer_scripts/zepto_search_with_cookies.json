@@ -1,0 +1,3177 @@
+{
+  "layout": [
+    {
+      "widgetId": "TITLE_WIDGET",
+      "widgetName": "SEARCH_TITLE_WIDGET",
+      "data": {
+        "fetchMode": "local",
+        "resolver": {
+          "useLocal": false,
+          "type": "title",
+          "data": {
+            "items": [],
+            "title": "Showing results for \"potato\"",
+            "queryTitle": "",
+            "searchQuery": "potato",
+            "replacingTerm": "",
+            "searchKeyInTitle": "potato",
+            "queryId": null,
+            "tabIdStoreProductMap": {},
+            "subTitle": null
+          }
+        }
+      },
+      "viewMeta": {
+        "aspectRatio": 3.33,
+        "paddingTop": 1,
+        "paddingBottom": 1,
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "backgroundColor": "#FFFFFF",
+        "adContainer": {
+          "marginHorizontal": 0,
+          "overflow": "",
+          "borderRadius": 0,
+          "backgroundColor": "",
+          "paddingBottom": 0
+        },
+        "productsList": {
+          "paddingHorizontal": 0,
+          "marginBottom": 0,
+          "separator": 0
+        },
+        "adAsset": {},
+        "backgroundGradient": {
+          "start": {
+            "x": 0,
+            "y": 0
+          },
+          "end": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "borderWidth": 0,
+        "borderColor": "",
+        "highlightColor": "",
+        "titleStyle": null,
+        "itemSpacing": 0,
+        "cardStyle": null,
+        "curveIcon": null,
+        "curveIconV2": null,
+        "headerStyle": null,
+        "listStyle": null,
+        "padding": null,
+        "itemPadding": null,
+        "imagePadding": null,
+        "titleIconImage": null,
+        "bodyStyle": null,
+        "subTitleLeadingIconImage": {
+          "id": "",
+          "name": "",
+          "path": "",
+          "lottiePath": "",
+          "videoPath": "",
+          "mediaType": "",
+          "width": 0,
+          "height": 0,
+          "hidePadding": false
+        },
+        "titleLeadingIconImage": {
+          "id": "",
+          "name": "",
+          "path": "",
+          "lottiePath": "",
+          "videoPath": "",
+          "mediaType": "",
+          "width": 0,
+          "height": 0,
+          "hidePadding": false
+        },
+        "tag": {
+          "text": "",
+          "variant": "",
+          "style": {
+            "color": "",
+            "paddingHorizontal": 0,
+            "paddingVertical": 0,
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "borderColor": "",
+            "backgroundColor": "",
+            "lineHeight": 0
+          }
+        },
+        "card": {
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "borderColor": "",
+          "backgroundColor": "",
+          "backgroundMode": "",
+          "firstColor": "",
+          "secondColor": "",
+          "padding": null
+        },
+        "overlayIconStyles": {},
+        "imageContainerStyle": {},
+        "productIconStyles": {},
+        "text": {
+          "unselectedColor": "",
+          "selectedColor": "",
+          "selectedVariant": "",
+          "unselectedVariant": "",
+          "selectedBackgroundColor": "",
+          "unselectedBackgroundColor": "",
+          "textSize": 0
+        }
+      },
+      "actions": null,
+      "analyticsMeta": {
+        "meta": {}
+      },
+      "widgetType": ""
+    },
+    {
+      "widgetId": "TOP_FILTERS_WIDGET",
+      "widgetName": "TOP_FILTERS",
+      "data": {
+        "fetchMode": "local",
+        "resolver": {
+          "useLocal": false,
+          "type": "filters",
+          "data": {
+            "items": [
+              {
+                "title": "",
+                "icon": {
+                  "height": 96,
+                  "hide_padding": false,
+                  "id": "b5ceb87a-89af-49d0-a41f-2b8d73f6dc53",
+                  "lottie_path": null,
+                  "media_type": "IMAGE",
+                  "name": "setting.svg",
+                  "path": "inventory/banner/f00ab935-89f9-4169-b8fe-c3ed0be7e4d9.png",
+                  "video_path": "",
+                  "width": 96,
+                  "sizeInBytes": 0
+                },
+                "isSelected": false,
+                "action": {
+                  "actionType": "OPEN_FILTER_BOTTOM_SHEET",
+                  "actionMeta": {
+                    "key": "filterOptions",
+                    "value": "setting",
+                    "type": "SINGLE_SELECT",
+                    "extraAction": "",
+                    "params": {
+                      "whitelistedAttributes": null
+                    }
+                  }
+                },
+                "isSticky": false,
+                "shouldShowNudge": false,
+                "trailingIcon": {
+                  "height": 0,
+                  "hide_padding": null,
+                  "id": "",
+                  "lottie_path": null,
+                  "media_type": "",
+                  "name": "",
+                  "path": "",
+                  "video_path": null,
+                  "width": 0,
+                  "sizeInBytes": 0
+                },
+                "row": 0,
+                "isHyperlinkFilter": false,
+                "overlayIcon": {
+                  "height": 0,
+                  "hide_padding": null,
+                  "id": "",
+                  "lottie_path": null,
+                  "media_type": "",
+                  "name": "",
+                  "path": "",
+                  "video_path": null,
+                  "width": 0,
+                  "sizeInBytes": 0
+                },
+                "type": "",
+                "productIcon": {
+                  "height": 0,
+                  "hide_padding": null,
+                  "id": "",
+                  "lottie_path": null,
+                  "media_type": "",
+                  "name": "",
+                  "path": "",
+                  "video_path": null,
+                  "width": 0,
+                  "sizeInBytes": 0
+                }
+              }
+            ],
+            "title": null,
+            "queryId": null,
+            "tabIdStoreProductMap": {},
+            "subTitle": null,
+            "type": "SINGLE_DECK"
+          }
+        }
+      },
+      "viewMeta": {
+        "aspectRatio": 1,
+        "paddingTop": 4,
+        "paddingBottom": 12,
+        "paddingLeft": 12,
+        "paddingRight": 12,
+        "titleColor": "#101418",
+        "backgroundMode": "PLAIN",
+        "adContainer": {
+          "marginHorizontal": 0,
+          "overflow": "",
+          "borderRadius": 0,
+          "backgroundColor": "",
+          "paddingBottom": 0
+        },
+        "productsList": {
+          "paddingHorizontal": 0,
+          "marginBottom": 0,
+          "separator": 0
+        },
+        "adAsset": {},
+        "imageHeight": 24,
+        "selectedColor": "#F8F3FF",
+        "unselectedColor": "#FFFFFF",
+        "selectedBorderColor": "#E9E0F7",
+        "unselectedBorderColor": "#E7E7E7",
+        "titleVariant": "body4",
+        "titlePaddingLeft": 4,
+        "horizontal": true,
+        "contentPaddingTop": 6,
+        "contentPaddingBottom": 6,
+        "contentPaddingLeft": 6,
+        "contentPaddingRight": 6,
+        "contentBorderRadius": 8,
+        "backgroundGradient": {
+          "start": {
+            "x": 0,
+            "y": 0
+          },
+          "end": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "borderWidth": 0,
+        "borderColor": "",
+        "highlightColor": "",
+        "titleStyle": null,
+        "itemSpacing": 0,
+        "cardStyle": null,
+        "curveIcon": null,
+        "curveIconV2": null,
+        "headerStyle": null,
+        "listStyle": null,
+        "padding": null,
+        "itemPadding": null,
+        "imagePadding": null,
+        "titleIconImage": null,
+        "bodyStyle": null,
+        "imageRadius": 4.8,
+        "subTitleLeadingIconImage": {
+          "id": "",
+          "name": "",
+          "path": "",
+          "lottiePath": "",
+          "videoPath": "",
+          "mediaType": "",
+          "width": 0,
+          "height": 0,
+          "hidePadding": false
+        },
+        "titleLeadingIconImage": {
+          "id": "",
+          "name": "",
+          "path": "",
+          "lottiePath": "",
+          "videoPath": "",
+          "mediaType": "",
+          "width": 0,
+          "height": 0,
+          "hidePadding": false
+        },
+        "tag": {
+          "text": "",
+          "variant": "",
+          "style": {
+            "color": "",
+            "paddingHorizontal": 0,
+            "paddingVertical": 0,
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "borderColor": "",
+            "backgroundColor": "",
+            "lineHeight": 0
+          }
+        },
+        "card": {
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "borderColor": "",
+          "backgroundColor": "",
+          "backgroundMode": "",
+          "firstColor": "",
+          "secondColor": "",
+          "padding": null
+        },
+        "imagePaddingRight": 2,
+        "titlePaddingRight": 4,
+        "titleLineHeight": 12,
+        "nudgeTextVariant": "overline1",
+        "nudgeBackgroundColor": "#8C3BB5",
+        "trailingImageHeight": 12,
+        "trailingImagePaddingLeft": 2,
+        "nudgeSize": 8,
+        "shadowColor": "#00000059",
+        "minItemsPerRow": 2,
+        "seperatorWidth": 8,
+        "seperatorHeight": 12,
+        "overlayIconStyles": {},
+        "imageContainerStyle": {},
+        "productIconStyles": {},
+        "text": {
+          "unselectedColor": "",
+          "selectedColor": "",
+          "selectedVariant": "",
+          "unselectedVariant": "",
+          "selectedBackgroundColor": "",
+          "unselectedBackgroundColor": "",
+          "textSize": 0
+        }
+      },
+      "actions": null,
+      "analyticsMeta": {
+        "meta": {}
+      },
+      "widgetType": ""
+    },
+    {
+      "widgetId": "PRODUCT_GRID",
+      "widgetName": "SEARCHED_PRODUCTS_0",
+      "data": {
+        "fetchMode": "local",
+        "resolver": {
+          "useLocal": false,
+          "type": "product_grid",
+          "data": {
+            "items": [
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "1225bf09-d21b-4678-9c12-b3822487d193",
+                  "id": "1225bf09-d21b-4678-9c12-b3822487d193",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": "India",
+                    "description": [
+                      "Potatoes are high in vitamin C",
+                      "an antioxidant.Potassium",
+                      "an electrolyte that helps our heart",
+                      "muscles",
+                      "and nervous system",
+                      "is another important mineral in potatoes.The fiber",
+                      "potassium",
+                      "vitamin C",
+                      "and vitamin B6 content of potatoes",
+                      "together with their absence of cholesterol",
+                      "all promote heart health. The fiber content of potatoes is high. Fiber reduces the total quantity of cholesterol in the blood",
+                      "lowering the risk of heart disease."
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "703968ef-dbdc-4168-b65d-852b43d70f70",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "5056cfba-ed03-459c-9d21-b80bb76e72d9"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Potato",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+                    "productType": "\u0000"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "1 Pack (900 - 1000 Gm)",
+                    "fssaiLicense": "",
+                    "id": "81ac330b-546a-45d6-97b1-f5dfc06739db",
+                    "images": [
+                      {
+                        "height": 3000,
+                        "hidePadding": true,
+                        "id": "a5b69c96-75aa-47a4-9b67-c3e5375509d5",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "f26b46a4-6a79-4590-bbfe-ae275114931a.jpeg",
+                        "path": "cms/product_variant/f26b46a4-6a79-4590-bbfe-ae275114931a.jpeg",
+                        "videoPath": null,
+                        "width": 3000,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 6,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 4200,
+                    "packagingType": null,
+                    "packsize": 1000,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 52,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "GRAM",
+                    "unlisted": false,
+                    "weightInGms": 1000,
+                    "productId": "703968ef-dbdc-4168-b65d-852b43d70f70",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 1000,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 2800,
+                  "discountPercent": 33,
+                  "discountAmount": 1400,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 6,
+                  "quantity": 52,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": false,
+                  "mrp": 4200,
+                  "productType": "SELLABLESKU",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 2800,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 0,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 1400
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 2800,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": null,
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.492647588
+                  }
+                },
+                "info": {},
+                "position": 0,
+                "index": 0
+              },
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "009a549a-c470-4d36-b199-2bdf9fddddfa",
+                  "id": "009a549a-c470-4d36-b199-2bdf9fddddfa",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": "India",
+                    "description": [
+                      "Potatoes are high in vitamin C",
+                      "an antioxidant.Potassium",
+                      "an electrolyte that helps our heart",
+                      "muscles",
+                      "and nervous system",
+                      "is another important mineral in potatoes.The fiber",
+                      "potassium",
+                      "vitamin C",
+                      "and vitamin B6 content of potatoes",
+                      "together with their absence of cholesterol",
+                      "all promote heart health. The fiber content of potatoes is high. Fiber reduces the total quantity of cholesterol in the blood",
+                      "lowering the risk of heart disease."
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "703968ef-dbdc-4168-b65d-852b43d70f70",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "5056cfba-ed03-459c-9d21-b80bb76e72d9"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Potato",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+                    "productType": "\u0000"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "2.8 - 3 kg",
+                    "fssaiLicense": "",
+                    "id": "31de2b4b-556e-4f30-8de7-a9b00b06eb2e",
+                    "images": [
+                      {
+                        "height": 3000,
+                        "hidePadding": true,
+                        "id": "9955852f-8041-468f-b29c-6b641162c0b6",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "245c6534-f795-475d-aa55-56213302eaa1.jpeg",
+                        "path": "cms/product_variant/245c6534-f795-475d-aa55-56213302eaa1.jpeg",
+                        "videoPath": null,
+                        "width": 3000,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 5,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 11500,
+                    "packagingType": null,
+                    "packsize": 3,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 8,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "KILOGRAM",
+                    "unlisted": false,
+                    "weightInGms": 3000,
+                    "productId": "703968ef-dbdc-4168-b65d-852b43d70f70",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 3000,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 7400,
+                  "discountPercent": 35,
+                  "discountAmount": 4100,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 5,
+                  "quantity": 8,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": false,
+                  "mrp": 11500,
+                  "productType": "SELLABLESKU",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 7400,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 3,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 4100
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 7400,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": null,
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.140810609
+                  }
+                },
+                "info": {},
+                "position": 1,
+                "index": 6
+              },
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "93471b2b-329a-4d54-b7bc-9e12e411c505",
+                  "id": "93471b2b-329a-4d54-b7bc-9e12e411c505",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": "India",
+                    "description": [
+                      ""
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "dbf30d1b-7e8e-446e-a182-a7963d283494",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "5056cfba-ed03-459c-9d21-b80bb76e72d9"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Baby Potato",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+                    "productType": "\u0000"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "500 g",
+                    "fssaiLicense": "",
+                    "id": "8fec958a-be38-421e-b511-bf63702c260b",
+                    "images": [
+                      {
+                        "height": 3000,
+                        "hidePadding": true,
+                        "id": "59a2b245-f96e-4259-8699-54f2cffe2938",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "8584f03f-5154-4325-88f5-e1bf3f31c674.jpeg",
+                        "path": "cms/product_variant/8584f03f-5154-4325-88f5-e1bf3f31c674.jpeg",
+                        "videoPath": null,
+                        "width": 3000,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 6,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 1600,
+                    "packagingType": null,
+                    "packsize": 500,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 8,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "GRAM",
+                    "unlisted": false,
+                    "weightInGms": 500,
+                    "productId": "dbf30d1b-7e8e-446e-a182-a7963d283494",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 500,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 1100,
+                  "discountPercent": 31,
+                  "discountAmount": 500,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 6,
+                  "quantity": 8,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": false,
+                  "mrp": 1600,
+                  "productType": "SELLABLESKU",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 1100,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 4,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 500
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 1100,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": null,
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.101233825
+                  }
+                },
+                "info": {},
+                "position": 2,
+                "index": 8
+              }
+            ],
+            "title": null,
+            "queryId": null,
+            "tabIdStoreProductMap": {},
+            "subTitle": null
+          }
+        }
+      },
+      "productGridViewMeta": {
+        "productCardVariant": "V3_SMALL_ABS_DISCOUNT",
+        "productCardVariantV2": "BASIC__S",
+        "numberOfColumns": 3,
+        "border": {
+          "width": 1,
+          "backgroundColor": "#F3F8FF"
+        },
+        "addButtonVariant": "variant_3",
+        "padding": [
+          12,
+          12,
+          4,
+          12
+        ],
+        "columnGap": 6,
+        "tagsScaleFactor": {
+          "P1": 0.83
+        }
+      },
+      "actions": null,
+      "analyticsMeta": {
+        "meta": {}
+      },
+      "widgetType": ""
+    },
+    {
+      "widgetId": "PRODUCT_GRID",
+      "widgetName": "SEARCHED_PRODUCTS_3",
+      "data": {
+        "fetchMode": "local",
+        "resolver": {
+          "useLocal": false,
+          "type": "product_grid",
+          "data": {
+            "items": [
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "ae99cd2c-127b-4a8d-ab2c-2e79605cdfce",
+                  "id": "ae99cd2c-127b-4a8d-ab2c-2e79605cdfce",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": "India",
+                    "description": [
+                      "Sweet potato benefits both your eyes and your immune system",
+                      "which is your body's protection against infections. It is also beneficial to your reproductive system as well as organs such as your heart and kidneys."
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "ee8a5913-7f06-4375-a22f-f70c1b83d3c4",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "4ef62b83-8601-48a9-947c-cafb882d427f"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Sweet Potato",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+                    "productType": "\u0000"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "500 g",
+                    "fssaiLicense": "",
+                    "id": "06a5ca3a-7c7c-4519-aa5e-3ba7fb051794",
+                    "images": [
+                      {
+                        "height": 3000,
+                        "hidePadding": true,
+                        "id": "75f75a11-10d7-48fb-826d-9e39384b4a15",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "835a15a1-f0b9-4451-a7f1-49dfa80d0e8a.jpeg",
+                        "path": "cms/product_variant/835a15a1-f0b9-4451-a7f1-49dfa80d0e8a.jpeg",
+                        "videoPath": null,
+                        "width": 3000,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 6,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 4100,
+                    "packagingType": null,
+                    "packsize": 500,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 3,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "GRAM",
+                    "unlisted": false,
+                    "weightInGms": 500,
+                    "productId": "ee8a5913-7f06-4375-a22f-f70c1b83d3c4",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 500,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 3000,
+                  "discountPercent": 26,
+                  "discountAmount": 1100,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 3,
+                  "quantity": 3,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": false,
+                  "mrp": 4100,
+                  "productType": "SELLABLESKU",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 3000,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 7,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 1100
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 3000,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": null,
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.0109914811
+                  }
+                },
+                "info": {},
+                "position": 3,
+                "index": 14
+              },
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "2508c3ab-97fc-45f1-8f9f-ec85e3b87ef2",
+                  "id": "2508c3ab-97fc-45f1-8f9f-ec85e3b87ef2",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": null,
+                    "description": [
+                      "Potatoes are high in vitamin C,an antioxidant.Potassium,an electrolyte that helps our heart,muscles,and nervous system,is another important mineral in potatoes.The fiber,potassium,vitamin C,and vitamin B6 content of potatoes,together with their absence of cholesterol,all promote heart health. The fiber content of potatoes is high. Fiber reduces the total quantity of cholesterol in the blood,lowering the risk of heart disease."
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "d480cce8-2faa-48bd-9024-fdfc5ff0462f",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "85bf8ee5-b70e-4bd8-ab23-192c6eae5ac8"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Potato Combo",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+                    "productType": "\u0004"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "(900 - 1000 Gm) X 2",
+                    "fssaiLicense": "",
+                    "id": "bba44ca5-f67e-493a-afd7-b43627bd7718",
+                    "images": [
+                      {
+                        "height": 3000,
+                        "hidePadding": true,
+                        "id": "7b746567-de98-4809-8420-2ade9c799a15",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "74aa64fe-3b6b-4589-9b97-2ca0bbd48424.jpeg",
+                        "path": "cms/product_variant/74aa64fe-3b6b-4589-9b97-2ca0bbd48424.jpeg",
+                        "videoPath": null,
+                        "width": 3000,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 6,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 8400,
+                    "packagingType": null,
+                    "packsize": 2,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 26,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "KILOGRAM",
+                    "unlisted": false,
+                    "weightInGms": 2000,
+                    "productId": "d480cce8-2faa-48bd-9024-fdfc5ff0462f",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 2000,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 5600,
+                  "discountPercent": 33,
+                  "discountAmount": 2800,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 6,
+                  "quantity": 26,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": false,
+                  "mrp": 8400,
+                  "productType": "BUNDLE",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 5600,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 8,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 2800
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 5600,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": [
+                    {
+                      "id": "1225bf09-d21b-4678-9c12-b3822487d193",
+                      "bundleId": "c622a9b5-b013-4a24-b847-53f6d5ee6702",
+                      "storeProductId": "1225bf09-d21b-4678-9c12-b3822487d193",
+                      "name": "Potato",
+                      "image": null,
+                      "mrp": 4200,
+                      "sellingPrice": 2800,
+                      "quantity": 2,
+                      "packsize": 1000,
+                      "weightInGms": 1000,
+                      "unitOfMeasure": "GRAM",
+                      "formattedPacksize": "1 Pack (900 - 1000 Gm)",
+                      "bundleItemQuantity": 2,
+                      "productVariantId": "81ac330b-546a-45d6-97b1-f5dfc06739db",
+                      "maxAllowedQuantity": 6
+                    }
+                  ],
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.00700561143
+                  }
+                },
+                "info": {},
+                "position": 4,
+                "index": 16
+              },
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "74287d77-cee6-4d24-a143-0ded643833cc",
+                  "id": "74287d77-cee6-4d24-a143-0ded643833cc",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": null,
+                    "description": [
+                      "Potatoes are high in vitamin C,an antioxidant.Potassium,an electrolyte that helps our heart,muscles,and nervous system,is another important mineral in potatoes.The fiber,potassium,vitamin C,and vitamin B6 content of potatoes,together with their absence of cholesterol,all promote heart health. The fiber content of potatoes is high. Fiber reduces the total quantity of cholesterol in the blood,lowering the risk of heart disease."
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "f646ee54-0daf-401b-ab34-75dbc33b8aa0",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "85bf8ee5-b70e-4bd8-ab23-192c6eae5ac8"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Baby Potato Combo",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+                    "productType": "\u0004"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "500 g X 2",
+                    "fssaiLicense": "",
+                    "id": "049a14ab-8e05-4cbb-8975-3a467df68132",
+                    "images": [
+                      {
+                        "height": 3000,
+                        "hidePadding": true,
+                        "id": "5f7cba3c-47c3-4b13-a9e3-975ed6c0aa07",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "0d6d033d-a621-4c2a-8140-4f5347c6fb87.jpeg",
+                        "path": "cms/product_variant/0d6d033d-a621-4c2a-8140-4f5347c6fb87.jpeg",
+                        "videoPath": null,
+                        "width": 3000,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 6,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 3200,
+                    "packagingType": null,
+                    "packsize": 1000,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 4,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "GRAM",
+                    "unlisted": false,
+                    "weightInGms": 1000,
+                    "productId": "f646ee54-0daf-401b-ab34-75dbc33b8aa0",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 1000,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 2200,
+                  "discountPercent": 31,
+                  "discountAmount": 1000,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 4,
+                  "quantity": 4,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": false,
+                  "mrp": 3200,
+                  "productType": "BUNDLE",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 2200,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 9,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 1000
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 2200,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": [
+                    {
+                      "id": "93471b2b-329a-4d54-b7bc-9e12e411c505",
+                      "bundleId": "a5e8d7cd-580c-4010-8996-c20f34dc31c5",
+                      "storeProductId": "93471b2b-329a-4d54-b7bc-9e12e411c505",
+                      "name": "Baby Potato",
+                      "image": null,
+                      "mrp": 1600,
+                      "sellingPrice": 1100,
+                      "quantity": 2,
+                      "packsize": 500,
+                      "weightInGms": 500,
+                      "unitOfMeasure": "GRAM",
+                      "formattedPacksize": "500 g",
+                      "bundleItemQuantity": 2,
+                      "productVariantId": "8fec958a-be38-421e-b511-bf63702c260b",
+                      "maxAllowedQuantity": 6
+                    }
+                  ],
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.00597594352
+                  }
+                },
+                "info": {},
+                "position": 5,
+                "index": 18
+              }
+            ],
+            "title": null,
+            "queryId": null,
+            "tabIdStoreProductMap": {},
+            "subTitle": null
+          }
+        }
+      },
+      "productGridViewMeta": {
+        "productCardVariant": "V3_SMALL_ABS_DISCOUNT",
+        "productCardVariantV2": "BASIC__S",
+        "numberOfColumns": 3,
+        "border": {
+          "width": 1,
+          "backgroundColor": "#F3F8FF"
+        },
+        "addButtonVariant": "variant_3",
+        "padding": [
+          12,
+          12,
+          4,
+          12
+        ],
+        "columnGap": 6,
+        "tagsScaleFactor": {
+          "P1": 0.83
+        }
+      },
+      "actions": null,
+      "analyticsMeta": {
+        "meta": {}
+      },
+      "widgetType": ""
+    },
+    {
+      "widgetId": "PRODUCT_GRID",
+      "widgetName": "SEARCHED_PRODUCTS_6",
+      "data": {
+        "fetchMode": "local",
+        "resolver": {
+          "useLocal": false,
+          "type": "product_grid",
+          "data": {
+            "items": [
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "06c9979c-07be-44fe-a634-8a946646edd6",
+                  "id": "06c9979c-07be-44fe-a634-8a946646edd6",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": null,
+                    "description": [
+                      "Potato 3 kg Combo"
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "a1ec3acc-e003-41fc-b75e-491556bd0aab",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "85bf8ee5-b70e-4bd8-ab23-192c6eae5ac8"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Potato Combo",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+                    "productType": "\u0004"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "(2.8 - 3 kg) X 3",
+                    "fssaiLicense": "",
+                    "id": "7f3ba7ff-5154-4fcc-a4b0-095dca103186",
+                    "images": [
+                      {
+                        "height": 3000,
+                        "hidePadding": true,
+                        "id": "0fa61f7a-4f94-4d53-bfd5-be3196f3cfad",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "030638a1-0c85-42f6-b18b-4fe6e24e6f02.jpeg",
+                        "path": "cms/product_variant/030638a1-0c85-42f6-b18b-4fe6e24e6f02.jpeg",
+                        "videoPath": null,
+                        "width": 3000,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 4,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 34500,
+                    "packagingType": null,
+                    "packsize": 9,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 2,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "KILOGRAM",
+                    "unlisted": false,
+                    "weightInGms": 9000,
+                    "productId": "a1ec3acc-e003-41fc-b75e-491556bd0aab",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 9000,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 22200,
+                  "discountPercent": 35,
+                  "discountAmount": 12300,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 2,
+                  "quantity": 2,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": false,
+                  "mrp": 34500,
+                  "productType": "BUNDLE",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 22200,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 10,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 12300
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 22200,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": [
+                    {
+                      "id": "009a549a-c470-4d36-b199-2bdf9fddddfa",
+                      "bundleId": "424b4db6-0aa2-4c41-9398-da6100831111",
+                      "storeProductId": "009a549a-c470-4d36-b199-2bdf9fddddfa",
+                      "name": "Potato",
+                      "image": null,
+                      "mrp": 11500,
+                      "sellingPrice": 7400,
+                      "quantity": 3,
+                      "packsize": 3,
+                      "weightInGms": 3000,
+                      "unitOfMeasure": "KILOGRAM",
+                      "formattedPacksize": "2.8 - 3 kg",
+                      "bundleItemQuantity": 3,
+                      "productVariantId": "31de2b4b-556e-4f30-8de7-a9b00b06eb2e",
+                      "maxAllowedQuantity": 5
+                    }
+                  ],
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.00201615365
+                  }
+                },
+                "info": {},
+                "position": 6,
+                "index": 20
+              },
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "b428e542-97eb-4644-80db-607880302199",
+                  "id": "b428e542-97eb-4644-80db-607880302199",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": "India",
+                    "description": [
+                      "Potatoes are high in vitamin C",
+                      "an antioxidant.Potassium",
+                      "an electrolyte that helps our heart",
+                      "muscles",
+                      "and nervous system",
+                      "is another important mineral in potatoes.The fiber",
+                      "potassium",
+                      "vitamin C",
+                      "and vitamin B6 content of potatoes",
+                      "together with their absence of cholesterol",
+                      "all promote heart health. The fiber content of potatoes is high. Fiber reduces the total quantity of cholesterol in the blood",
+                      "lowering the risk of heart disease."
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "d612c2ca-8427-406a-977e-d897331e9700",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "c81b0142-f521-4ce9-a25a-c7d97538e218"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Organically Grown Potato",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "414e9381-3ba3-4632-92e0-00fc29304900",
+                    "productType": "\u0000"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "500 g",
+                    "fssaiLicense": "",
+                    "id": "92f0924e-0f8c-465f-a306-7054d46d7549",
+                    "images": [
+                      {
+                        "height": 883,
+                        "hidePadding": true,
+                        "id": "477b0209-aa8c-463d-85b2-f4dd727e6513",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "79d3844b-d7b7-46fe-876c-5be20c29d795.jpeg",
+                        "path": "cms/product_variant/79d3844b-d7b7-46fe-876c-5be20c29d795.jpeg",
+                        "videoPath": null,
+                        "width": 883,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 8,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 5400,
+                    "packagingType": null,
+                    "packsize": 500,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 0,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "GRAM",
+                    "unlisted": false,
+                    "weightInGms": 500,
+                    "productId": "d612c2ca-8427-406a-977e-d897331e9700",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 500,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 4300,
+                  "discountPercent": 20,
+                  "discountAmount": 1100,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 0,
+                  "quantity": 0,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": true,
+                  "mrp": 5400,
+                  "productType": "SELLABLESKU",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 4300,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 5,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 1100
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 4300,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": null,
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.0614522435
+                  }
+                },
+                "info": {},
+                "position": 33,
+                "index": 10
+              },
+              {
+                "productResponse": {
+                  "recommendationId": "",
+                  "objectId": "2a0a723f-9a30-4e2e-88a2-df46b0dc675b",
+                  "id": "2a0a723f-9a30-4e2e-88a2-df46b0dc675b",
+                  "storeId": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+                  "product": {
+                    "brand": "Unbranded",
+                    "brandId": "d69ba762-dfca-47f4-8e52-d09a6d1ffbd0",
+                    "countryOfOrigin": null,
+                    "description": [
+                      "Potatoes are high in vitamin C",
+                      "an antioxidant.Potassium",
+                      "an electrolyte that helps our heart",
+                      "muscles",
+                      "and nervous system",
+                      "is another important mineral in potatoes.The fiber",
+                      "potassium",
+                      "vitamin C",
+                      "and vitamin B6 content of potatoes",
+                      "together with their absence of cholesterol",
+                      "all promote heart health. The fiber content of potatoes is high. Fiber reduces the total quantity of cholesterol in the blood",
+                      "lowering the risk of heart disease."
+                    ],
+                    "discountApplicable": true,
+                    "howToUse": null,
+                    "id": "72842594-7bc5-477b-a915-c3745a407380",
+                    "imported": false,
+                    "ingredients": null,
+                    "l3CategoryIds": [
+                      "ff3612e4-6dd0-4464-91e9-37444190f836"
+                    ],
+                    "manufacturerAddress": null,
+                    "manufacturerName": null,
+                    "minimumRequiredAge": 0,
+                    "name": "Organic Potato Combo",
+                    "pharmaceuticalInfo": null,
+                    "prioritisedSearchKeywords": null,
+                    "searchKeywords": null,
+                    "primarySubcategory": "414e9381-3ba3-4632-92e0-00fc29304900",
+                    "productType": "\u0004"
+                  },
+                  "productVariant": {
+                    "formattedPacksize": "500 g X 2",
+                    "fssaiLicense": "",
+                    "id": "6938ec6f-15d1-4ba7-975a-5ecef4ae0756",
+                    "images": [
+                      {
+                        "height": 883,
+                        "hidePadding": true,
+                        "id": "51fbd7d4-ec66-4f8f-8c97-544b801d6fcc",
+                        "lottiePath": null,
+                        "mediaType": "IMAGE",
+                        "name": "26256e03-eefd-410d-8624-43514a342265.jpeg",
+                        "path": "cms/product_variant/26256e03-eefd-410d-8624-43514a342265.jpeg",
+                        "videoPath": null,
+                        "width": 883,
+                        "sizeInBytes": 0,
+                        "metaData": {
+                          "aspectRatio": null,
+                          "resizeMode": "contain"
+                        }
+                      }
+                    ],
+                    "maxAllowedQuantity": 6,
+                    "meta": {
+                      "query_matching_bucket": "",
+                      "searchFeedBucket": null,
+                      "isSemantic": false,
+                      "vip_deal_product_tile_state": 0,
+                      "is_vip_deal_product": false,
+                      "ads_deboosting_old_position": 0,
+                      "ads_deboosting_new_position": 0,
+                      "ads_flywheel_old_position": 0,
+                      "ads_flywheel_new_position": 0,
+                      "is_fly_wheel_ad": false
+                    },
+                    "mrp": 10800,
+                    "packagingType": null,
+                    "packsize": 1000,
+                    "pharmaceuticalInfo": null,
+                    "quantity": 0,
+                    "shelfLifeInHours": null,
+                    "showOnlyInBundles": false,
+                    "storageInstructions": null,
+                    "unitOfMeasure": "GRAM",
+                    "unlisted": false,
+                    "weightInGms": 1000,
+                    "productId": "72842594-7bc5-477b-a915-c3745a407380",
+                    "isActive": true,
+                    "priceSegmentType": "",
+                    "widthInMm": 1000,
+                    "cuisineType": "",
+                    "productTheme": "",
+                    "l4Attributes": {
+                      "drugType": null,
+                      "prescriptionRequired": null
+                    }
+                  },
+                  "discountedSellingPrice": 8600,
+                  "discountPercent": 20,
+                  "discountAmount": 2200,
+                  "storeProductDiscountId": "",
+                  "availableQuantity": 0,
+                  "quantity": 0,
+                  "allocatedQuantity": 0,
+                  "stockoutThresholdQuantity": 0,
+                  "outOfStock": true,
+                  "mrp": 10800,
+                  "productType": "BUNDLE",
+                  "priority": 0,
+                  "cached": false,
+                  "isNewProduct": false,
+                  "sellingPrice": 8600,
+                  "isActive": true,
+                  "isBestOffer": false,
+                  "isPrimary": true,
+                  "rollUpIds": null,
+                  "meta": {
+                    "qrl_old_position": 6,
+                    "qrl_new_position": 33,
+                    "tags": [
+                      {
+                        "type": ""
+                      }
+                    ],
+                    "tagsV2": {
+                      "P0": {
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "id": "479ac2d1-b3e0-494c-bda4-300d124c4b88",
+                        "pdpAttachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "7f9897d0-a247-4079-af59-da82a6ae7592",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/a61dd64f-be76-4ef6-8df8-802e086ecf56-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        },
+                        "position": "P0",
+                        "tagName": "Product Discount",
+                        "tagText": "",
+                        "tagType": "DISCOUNT"
+                      }
+                    },
+                    "query_matching_bucket": "Other",
+                    "searchFeedBucket": null,
+                    "isSemantic": false,
+                    "vip_deal_product_tile_state": 0,
+                    "is_vip_deal_product": false,
+                    "ads_deboosting_old_position": 0,
+                    "ads_deboosting_new_position": 0,
+                    "ads_flywheel_old_position": 0,
+                    "ads_flywheel_new_position": 0,
+                    "is_fly_wheel_ad": false
+                  },
+                  "pricingCampaigns": null,
+                  "primaryCategoryName": "Fruits & Vegetables",
+                  "primaryCategoryId": "64374cfe-d06f-4a01-898e-c07c46462c36",
+                  "zeptoPassPrice": 0,
+                  "zeptoPassPriceDiscountPercent": 0,
+                  "zeptoPassPricingCampaigns": [],
+                  "zeptoPassPriceDiscountPercentDifference": 0,
+                  "uclId": "",
+                  "valueBasedDiscount": {
+                    "passDiscountTier": null,
+                    "nonPassDiscountTier": "TIER_2",
+                    "passTotalDiscount": null,
+                    "nonPassTotalDiscount": 2200
+                  },
+                  "l3CategoriesDetail": null,
+                  "itemVariant": null,
+                  "properties": null,
+                  "rankingParams": {
+                    "l30RPI": 0,
+                    "l30ORD": 0
+                  },
+                  "searchFeedBucket": "",
+                  "searchFeedOrder": 0,
+                  "superSaverSellingPrice": 8600,
+                  "productCardTags": {
+                    "slot3": [
+                      {
+                        "id": "b77b07cb-73ee-4050-a7b2-5484c9e7966b",
+                        "tagType": "DISCOUNT",
+                        "tagName": "Product Discount",
+                        "position": "SLOT3",
+                        "attachment": {
+                          "height": 36,
+                          "hidePadding": false,
+                          "id": "e85a9963-d784-4e71-aeb2-184808f18ba7",
+                          "lottiePath": "",
+                          "mediaType": "IMAGE",
+                          "name": "P0 - Discount.png",
+                          "path": "inventory/product/1f09407a-3f51-4772-9860-197d23fbd8cd-P0_-_Discount.png",
+                          "videoPath": "",
+                          "width": 88,
+                          "sizeInBytes": 0,
+                          "metaData": null
+                        }
+                      }
+                    ]
+                  },
+                  "zeptoPassPricePerUom": null,
+                  "showSuperSaverPrice": false,
+                  "categories": null,
+                  "subCategories": null,
+                  "brands": null,
+                  "showDailyBogoStrip": null,
+                  "isWishlistEnabled": true,
+                  "addOnInfo": null,
+                  "action": null,
+                  "itemisationStockInfo": null,
+                  "bottomsheetType": "v1",
+                  "bundleItems": [
+                    {
+                      "id": "b428e542-97eb-4644-80db-607880302199",
+                      "bundleId": "085ea826-cdc5-494b-9276-d64cda7c6c86",
+                      "storeProductId": "b428e542-97eb-4644-80db-607880302199",
+                      "name": "Organically Grown Potato",
+                      "image": null,
+                      "mrp": 5400,
+                      "sellingPrice": 4300,
+                      "quantity": 2,
+                      "packsize": 500,
+                      "weightInGms": 500,
+                      "unitOfMeasure": "GRAM",
+                      "formattedPacksize": "500 g",
+                      "bundleItemQuantity": 2,
+                      "productVariantId": "92f0924e-0f8c-465f-a306-7054d46d7549",
+                      "maxAllowedQuantity": 8
+                    }
+                  ],
+                  "rollUpVariantsDetails": null,
+                  "brandDeliveryOfferDetails": null,
+                  "primarySubcategoryName": "",
+                  "consumerL3CategoryNames": null,
+                  "primarySubcategoryId": "",
+                  "l4Attributes": {},
+                  "price": {
+                    "percentageDifference": 0,
+                    "mrp": 0,
+                    "sp": 0
+                  },
+                  "colour": "",
+                  "material_type": "",
+                  "design_type": "",
+                  "size": "",
+                  "capacity": "",
+                  "cachedReRankingParams": {
+                    "AtlasRecallRank": 0,
+                    "Rank25Variant": 0,
+                    "ATCPI": 0,
+                    "IsOrganicBucket": true,
+                    "OrganicScore": 0.0127542494
+                  }
+                },
+                "info": {},
+                "position": 33,
+                "index": 12
+              }
+            ],
+            "title": null,
+            "queryId": null,
+            "tabIdStoreProductMap": {},
+            "subTitle": null
+          }
+        }
+      },
+      "productGridViewMeta": {
+        "productCardVariant": "V3_SMALL_ABS_DISCOUNT",
+        "productCardVariantV2": "BASIC__S",
+        "numberOfColumns": 3,
+        "border": {
+          "width": 1,
+          "backgroundColor": "#F3F8FF"
+        },
+        "addButtonVariant": "variant_3",
+        "padding": [
+          12,
+          12,
+          4,
+          12
+        ],
+        "columnGap": 6,
+        "tagsScaleFactor": {
+          "P1": 0.83
+        }
+      },
+      "actions": null,
+      "analyticsMeta": {
+        "meta": {}
+      },
+      "widgetType": ""
+    },
+    {
+      "widgetId": "HOME_FOOTER",
+      "widgetName": "SEARCH_FOOTER",
+      "data": {
+        "fetchMode": "",
+        "resolver": {
+          "useLocal": false,
+          "type": "",
+          "data": {
+            "items": null,
+            "title": null,
+            "queryId": null,
+            "tabIdStoreProductMap": {},
+            "subTitle": null
+          }
+        }
+      },
+      "actions": null,
+      "analyticsMeta": {
+        "meta": {}
+      },
+      "widgetType": ""
+    }
+  ],
+  "footer": {
+    "widget": {
+      "widgetId": "",
+      "widgetName": "",
+      "data": {
+        "fetchMode": "",
+        "resolver": {
+          "useLocal": false,
+          "type": "",
+          "data": {
+            "items": null,
+            "title": null,
+            "queryId": null,
+            "tabIdStoreProductMap": {},
+            "subTitle": null
+          }
+        }
+      },
+      "actions": null,
+      "analyticsMeta": {
+        "meta": {}
+      },
+      "widgetType": ""
+    }
+  },
+  "header": null,
+  "selectedTabId": 0,
+  "algoliaQueryID": "",
+  "showCigaretteBanner": false,
+  "pageProductCount": 9,
+  "totalProductCount": 16,
+  "currentPage": 0,
+  "hasReachedEnd": true,
+  "userSessionId": "b17dfa05-e49e-412d-ac7b-36e8b7512ab2",
+  "algoliaTimeOut": false,
+  "algoliaTypoTolerance": false,
+  "filters": {
+    "activeFilters": {
+      "brands": null,
+      "l3Categories": null
+    },
+    "allFilters": {
+      "brands": null,
+      "l3Categories": null
+    },
+    "topBrands": null
+  },
+  "showTobaccoConsentPopup": false,
+  "meta": {
+    "related_products_enabled": false,
+    "related_products_search_term_default": "potato",
+    "total_organic_products": 34,
+    "oos_organic_products": 0,
+    "instock_organic_products": 16,
+    "total_related_products": 0,
+    "oos_related_products": 0,
+    "instock_related_products": 0,
+    "total_results": 34,
+    "total_oos_results": 0,
+    "total_instock_results": 16,
+    "related_products_reason": "CompatibleComponentsNotFound",
+    "qcl_meta": {
+      "qcl_correction_not_done_reason": "CompatibleComponentsNotFound",
+      "qcl_correction_done_v3": false
+    },
+    "previously_bought_feature_info_bucketized": {},
+    "inhouse_search_done": false,
+    "plp_primary_category_name_from_recall": "",
+    "plp_primary_category_mapping": "",
+    "plp_subcat_listing_logic": "",
+    "plp_experience_shown": false,
+    "plp_experience_not_shown_reason": "PlpExperimentNotEnabled",
+    "relevance_v2": {
+      "relevance_L1": [
+        {
+          "id": "64374cfe-d06f-4a01-898e-c07c46462c36",
+          "name": "Fruits & Vegetables",
+          "score": 0
+        }
+      ],
+      "relevance_L2": [
+        {
+          "id": "b4827798-fcb6-4520-ba5b-0f2bd9bd7208",
+          "name": "Fresh Vegetables",
+          "score": 0.0702
+        },
+        {
+          "id": "414e9381-3ba3-4632-92e0-00fc29304900",
+          "name": "Organics & Hydroponics",
+          "score": 0.5316
+        }
+      ],
+      "relevance_L3": [
+        {
+          "id": "a8cf1671-1c7b-40c7-8ffc-c1d292b0d416",
+          "name": "Potato",
+          "score": 0.13456
+        },
+        {
+          "id": "6045050a-d571-4619-8b3e-b6f3b8cc7835",
+          "name": "Boiled Vegetables",
+          "score": 0.01,
+          "operationType": "ADD"
+        },
+        {
+          "id": "837f3dca-0352-4481-9a07-e1de2c211ac0",
+          "name": "Baby Potato",
+          "score": 0.01,
+          "operationType": "ADD"
+        }
+      ]
+    },
+    "relevance_L3_count": 3,
+    "relevance_variant_selected": 2,
+    "segmentations": [
+      "HEAD",
+      "TOP_1L"
+    ],
+    "query_intent_done": true,
+    "ds_query_type": "narrow",
+    "ds_basket_building_flag": true,
+    "ds_basket_building_flag_data": "basket",
+    "filter_mode": 1,
+    "filter_state": "NO_FILTER_SELECTED",
+    "l3_span_results_count": 0,
+    "l3_partial_results_count": 0,
+    "l3_other_results_count": 16,
+    "l3_oos_span_results_count": 0,
+    "l3_oos_partial_results_count": 0,
+    "l3_oos_other_results_count": 0,
+    "l3_instock_span_results_count": 0,
+    "l3_instock_partial_results_count": 0,
+    "l3_instock_other_results_count": 16,
+    "recommendations_instrumentation_info": {
+      "query_level_sku_recommendations_instrumentation_info": {},
+      "cross_sell_widget_instrumentation_info": {}
+    },
+    "is_scoped_search_enabled": false,
+    "scope_category": "",
+    "scope_subcategory": "",
+    "scoped_search_not_enabled_reason": "",
+    "oos_text_meta": "",
+    "source_search_term": "potato",
+    "recall_type_detail": {
+      "recall_type": "ORGANIC_RECALL_WITH_NO_TYPO_AND_EXACT_MATCH",
+      "recall_display_title": "Showing results for \"potato\""
+    },
+    "category_cohort_experiment_instrumentation_info": {
+      "highestConfidenceL1": "Fruits & Vegetables",
+      "highestConfidenceL2": "Fresh Vegetables",
+      "relevanceLevel": "L1",
+      "cohortRankingNotEnabledReason": "UserIdNotPresent",
+      "categoryBasedRankingEnabled": false,
+      "isAtcDone": true
+    },
+    "meds_with_similar_salts_info": {},
+    "is_liquidation_done": false,
+    "liquidation_not_done_reason": "LiquidationMinProductsCriteriaFailed",
+    "l3_understanding_meta": {},
+    "product_grid_meta_info": {
+      "isProductGridFeatureEnabled": true,
+      "productGridSize": 3,
+      "productGridVariantType": "V3_SMALL_ABS_DISCOUNT",
+      "searchExperienceType": "3_3_discount_abs"
+    },
+    "buy_again_v2_boost_info": {},
+    "qrl_rerank_info_v2": {
+      "ranking_segmentation_error_occurred": false,
+      "default_qrl_rerank_done": true,
+      "explore_qrl_rerank_done": true,
+      "vector_qrl_rerank_done": false,
+      "qrl_vector_rerank_not_done_reason": "ExperimentNotFoundForUser",
+      "qrl_default_rerank_source": "query_reranking_rank26_variant",
+      "qrl_explore_rerank_source": "query_reranking_rank26_variant",
+      "qrl_vector_rerank_source": "",
+      "qrl_default_reranking_list_product_count": 16,
+      "qrl_explore_reranking_list_product_count": 1,
+      "qrl_vector_reranking_list_product_count": 0,
+      "qrl_default_search_product_count": 34,
+      "qrl_explore_search_product_count": 0,
+      "qrl_vector_search_product_count": 0,
+      "qrl_common_default_product_count": 16,
+      "qrl_common_explore_product_count": 0,
+      "qrl_common_vector_product_count": 0,
+      "feature_store_meta": {
+        "feature_store_enabled": true,
+        "feature_store_found_count": 30,
+        "feature_store_not_found_count": 4,
+        "feature_store_model_call_found_count": 10,
+        "feature_store_model_call_not_found_count": 24
+      },
+      "qrl_default_rerank_expression": "",
+      "qrl_explore_rerank_expression": "",
+      "qrl_vector_rerank_expression": "",
+      "explore_re_rank_meta": {},
+      "user_personalization_meta": {
+        "is_user_personalized_ranking_done": false,
+        "total_user_personalized_ranked_product_count": 0,
+        "span_user_personalized_ranked_product_count": 0,
+        "partial_user_personalized_ranked_product_count": 0,
+        "other_user_personalized_ranked_product_count": 0
+      }
+    },
+    "model_qrl_info": {
+      "qrl_rerank_done": false,
+      "qrl_rerank_source": "",
+      "qrl_products_rank_changed_count": 0,
+      "model_output_recall_count": 0,
+      "model_input_recall_count": 34,
+      "market_place": ""
+    },
+    "unserviceable_store_deboosting_not_enabled_reason": "Zero Unserviceable Stores Present",
+    "store_stress_info": {
+      "storeIdUsedStressRanking": "c1490eb7-318a-4ee3-b14c-37e943e3b44a",
+      "storeStressRankingNotEnabledReason": "user not enabled for marketplaceType: SUPER_SAVER",
+      "storeStressRankingEnabled": false,
+      "rankingVariant": null,
+      "storeStressInCache": 0,
+      "storeStressEnum": ""
+    },
+    "pt_and_attributes_meta": {
+      "search_term_contains_attributes": 0,
+      "search_term_number_of_attributes": 0,
+      "search_term_PT": [],
+      "search_term_brand": [],
+      "search_term_contains_brand": 0,
+      "search_term_attributes": [],
+      "search_term_attribute_values": {}
+    },
+    "vip_deals_meta": {
+      "total_vip_deal_atlas_boosted_cnt": 0
+    },
+    "autosuggestion_live_ranker_meta": {
+      "ctr_ranking_done": false,
+      "cvr_ranking_done": false
+    },
+    "vip_deals_horizontal_card_widget_instrumentation_info": {
+      "deal_cards_loaded": 0
+    },
+    "special_event_instrumentation_info": {
+      "events": null,
+      "special_events_enabled": false,
+      "special_events_not_enabled_reason": "CompatibleComponentsNotFound"
+    },
+    "a_vector_recall_meta_info": {
+      "rt_vector_eligible_query": false,
+      "is_lightweight_vector_scaling": false,
+      "a_segmentation_applied": true,
+      "a_source_search_term": "potato",
+      "a_query_segmentations": [
+        "HEAD",
+        "TOP_1L"
+      ],
+      "a_query_segmentations_count": 2
+    },
+    "explore_exploit_meta_info": {
+      "masterFlagEnabled": true,
+      "exploreExploitNotShownReason": "user_not_in_experiment_test_bucket"
+    },
+    "ads_banner_widget_instrumentation_info": {
+      "candidates_processed": 0
+    },
+    "consolidated_banner_widget_instrumentation": {
+      "total_candidates_processed": 0,
+      "widgets_added": [],
+      "widgets_rejected": [],
+      "conflicts_resolved": 0
+    },
+    "ads_meta": {
+      "deboosting": null,
+      "fly_wheel": null
+    },
+    "aisle_experience_instrumentation_info": {
+      "aisle_experience_shown": false,
+      "aisle_eligible_query": false,
+      "aisle_experience_not_shown_reason": "AisleExperienceExperimentNotEnabled"
+    },
+    "is_tier_2_query_type": false,
+    "tertiary_store_deboosted_instrumentation": {
+      "tertiary_deboosting_default_done": false,
+      "tertiary_deboosting_explore_done": false,
+      "tertiary_deboosting_vector_done": false
+    },
+    "explore_expansion_instrumentation_info": {
+      "masterFlagEnabled": true,
+      "exploreExpansionNotShownReason": "experiment check failed",
+      "enabled": false
+    },
+    "model_meta_info": {
+      "head_or_tail_ranker_model_meta": {
+        "query_frequency_type": "HEAD",
+        "model_name": "search_ranking-1",
+        "success": true,
+        "model_input_product_count": 34,
+        "model_output_product_count": 10,
+        "model_selected_count": 10
+      },
+      "n1_ranker_model_meta": {
+        "model_name": "user-search-ranker-1",
+        "error": "N1 model not enabled: N1 ranker experiment is not present or in control variant"
+      },
+      "ctr_ranker_model_meta": {},
+      "cvr_ranker_model_meta": {}
+    }
+  },
+  "pageType": "normal",
+  "stickyHeaders": [
+    1
+  ],
+  "isProductGridEnabled": true,
+  "nextPageParams": {
+    "filterMode": 1
+  }
+}
