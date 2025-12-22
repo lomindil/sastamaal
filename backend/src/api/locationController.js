@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const swiggyService = require("../services/swiggyService");
-const storeState = require("../state/storeState");
+const { encodePodId } = require("../../utils/cookie");
 
 router.post("/", async (req, res) => {
     try {
@@ -23,14 +23,19 @@ router.post("/", async (req, res) => {
         console.log("Calling Swiggy Service for location Update\n");
         const podId = await swiggyService.submitLocation({ lat, lng, address });
         if (podId) {
-            storeState.swiggy.podId = podId;
-            storeState.swiggy.lastLocationSuccess = true;
+        const encodedPod = encodePodId(podId);
+
+        res.cookie("swiggy_pod", encodedPod, {
+            httpOnly: true,
+            secure: true,        // true in production
+            sameSite: "lax",
+            maxAge: 24 * 60 * 60 * 1000 // 1 day
+        });
             console.log("Swiggy location set, podId:", podId);
             results.swiggy = "success";
         } else {
-            // keep default podId 
-            storeState.swiggy.lastLocationSuccess = false;
-            console.log("Swiggy location set failed, keeping default podId");
+            
+            console.log("Swiggy location set failed, keeping default podId, no cookie set");
             results.swiggy = "failure";
         }
 

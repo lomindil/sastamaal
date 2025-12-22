@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const swiggyService = require("../services/swiggyService");
-const storeState = require("../state/storeState");
+const { decodePodId } = require("../../utils/cookie");
+
+const DEFAULT_POD_ID = 1374258;
 
 router.post("/", async (req, res) => {
     try {
@@ -20,7 +22,17 @@ router.post("/", async (req, res) => {
             zepto: { success: false, items: [] }
         };
 
-            const podId = storeState.swiggy.podId;
+            let podId = DEFAULT_POD_ID;
+
+            try {
+                if (req.cookies?.swiggy_pod) {
+                podId = decodePodId(req.cookies.swiggy_pod);
+                console.log("Using podId from cookie:", podId);
+            }
+            } catch (e) {
+                console.warn("Invalid pod cookie, using default");
+                podId = DEFAULT_POD_ID;
+            }
             const items = await swiggyService.searchItems(podId, query);
             output.swiggy = { success: true, items };
 

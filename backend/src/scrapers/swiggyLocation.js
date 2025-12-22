@@ -47,7 +47,7 @@ module.exports = async function selectLocation(page, { lat, lng, address }) {
     }
 
     const podId = findPod(json);
-    if (!podId) throw new Error("podId not found");
-
+    if (!podId) console.log("podId not found");
+    
     return podId;
 };
