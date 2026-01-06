@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const swiggyService = require("../services/swiggyService");
 const { blinkitSearch } = require("../blinkitService/blinkitSearch");
+const { zeptoSearchItems } = require("../zeptoService/zeptoSearch");
 const { decodePodId } = require("../../utils/cookie");
 
 const DEFAULT_POD_ID = 1374258;
@@ -47,15 +48,19 @@ router.post("/", async (req, res) => {
             podId = DEFAULT_POD_ID;
         }
 
-        const swiggyPromise = swiggyService.searchItems(podId, query);
-        const blinkitPromise = blinkitSearch(location_info, query);
+        // const swiggyPromise = swiggyService.searchItems(podId, query);
+        // const blinkitPromise = blinkitSearch(location_info, query);
+        const zeptoPromise = zeptoSearchItems(location_info, query);
 
-        const swiggyResult = await swiggyPromise;
+        
+        // const swiggyResult = await swiggyPromise;
+        // output.swiggy = { success: true, items: swiggyResult };
 
-        output.swiggy = { success: true, items: swiggyResult };
+        // const blinkitResult = await blinkitPromise;
+        // output.blinkit = { success: true, items: blinkitResult };
 
-        const blinkitResult = await blinkitPromise;
-        output.blinkit = { success: true, items: blinkitResult };
+        const zeptoResult = await zeptoPromise;
+        output.zepto = { success: true, items: zeptoResult };
 
         return res.json(output);
     } catch (err) {
