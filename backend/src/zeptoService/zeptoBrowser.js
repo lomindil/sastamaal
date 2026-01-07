@@ -1,31 +1,26 @@
-const puppeteer = require("puppeteer-extra");
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-
-puppeteer.use(StealthPlugin());
-
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const runZeptoSearch = async ({ location, query }) => {
-    let browser;
+const runZeptoSearch = async (browser, location, query) => {
+    let page;
     try {
-        browser = await puppeteer.launch({
-            headless: "new",
-            args: [
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                "--disable-dev-shm-usage",
-                "--disable-gpu"
-            ]
-        });
+        page = await browser.newPage();
 
-        const page = await browser.newPage();
         await page.setUserAgent(
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
             "AppleWebKit/537.36 (KHTML, like Gecko) " +
             "Chrome/122.0.0.0 Safari/537.36"
         );
 
-        let searchApiResponse = null;
+        const normalizedQuery = query.trim().toLowerCase();
+
+        let resolveSearch;
+        let rejectSearch;
+
+        const searchPromise = new Promise((resolve, reject) => {
+            resolveSearch = resolve;
+            rejectSearch = reject;
+        });
+
         page.on("response", async (response) => {
             try {
                 const request = response.request();
@@ -39,25 +34,29 @@ const runZeptoSearch = async ({ location, query }) => {
                     if (!postData) return;
 
                     const body = JSON.parse(postData);
-                    if (!body?.query || body.query !== query) return;
+                    if (!body?.query) return;
 
-                    console.log("✅ REAL PRODUCT SEARCH CAPTURED");
-                    console.log("🔍 Query:", body.query);
+                    if (body.query.trim().toLowerCase() !== normalizedQuery) {
+                        return;
+                    }
 
-                    searchApiResponse = await response.json();
+                    console.log("✅ Zepto search API captured:", body.query);
+
+                    const json = await response.json();
+                    resolveSearch(json);
                 }
-            } catch {
-                // ignore protocol noise
+            } catch (err) {
+                rejectSearch(err);
             }
         });
-        console.log("🌐 Opening Zepto homepage...");
+
         await page.goto("https://www.zepto.com/", {
             waitUntil: "domcontentloaded",
             timeout: 60000
         });
 
-        await sleep(2000);
-        console.log("📍 Injecting location cookies...");
+        await sleep(1000);
+
         await page.setCookie(
             {
                 name: "latitude",
@@ -92,10 +91,7 @@ const runZeptoSearch = async ({ location, query }) => {
             waitUntil: "networkidle2",
             timeout: 60000
         });
-
-        await sleep(2000);
-
-        console.log("🔍 Opening search page...");
+        await sleep(1000);
         await page.goto(
         `https://www.zepto.com/search?query=${encodeURIComponent(query)}`,
         {
@@ -104,22 +100,23 @@ const runZeptoSearch = async ({ location, query }) => {
         }
         );
 
-        const start = Date.now();
-        while (!searchApiResponse && Date.now() - start < 15000) {
-            await sleep(300);
-        }
+        const result = await Promise.race([
+            searchPromise,
+            sleep(15000).then(() => {
+                throw new Error("Search API timeout");
+            })
+        ]);
 
-        if (!searchApiResponse) {
-        console.log("❌ Search API response not captured");
-            return null;
-        }
-        return searchApiResponse;
+        return result;
 
     } catch (err) {
-        console.error("❌ Zepto search error:", err.message);
+        console.error("❌ Zepto search failed:", err.message);
         return null;
     } finally {
-        if (browser) await browser.close();
+        if (page) {
+            page.removeAllListeners("response");
+            await page.close();
+        }
     }
 };
 
