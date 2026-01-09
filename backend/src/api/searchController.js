@@ -49,19 +49,33 @@ router.post("/", async (req, res) => {
         // Creating single browser instance for all services
         browser = await getBrowser();
 
-        // const swiggyResult = await swiggyService.searchItems(browser, podId, query);
+        // const swiggyRes = await swiggyService.searchItems(browser, podId, query);
         // const blinkitRes = await blinkitSearch(browser, location_info, query);
         // const zeptoRes = await zeptoSearchItems(browser, location_info, query);
 
         const [
+            // swiggyRes,
             blinkitRes,
             zeptoRes
         ] = await Promise.all([
+            swiggyService.searchItems(browser, podId, query),
             blinkitSearch(browser, location_info, query),
             zeptoSearchItems(browser, location_info, query)
         ]);
 
-        // output.swiggy = { success: true, items: swiggyResult || [] };
+
+        // const results = await Promise.allSettled([
+        //     swiggyService.searchItems(browser, podId, query),
+        //     blinkitSearch(browser, location_info, query),
+        //     zeptoSearchItems(browser, location_info, query)
+        // ]);
+        
+        // const [swiggyRes, blinkitRes, zeptoRes] = results.map(r =>
+        //     r.status === "fulfilled" ? r.value : null
+        // );
+        
+
+        output.swiggy = { success: true, items: swiggyRes || [] };
         output.blinkit = { success: true, items: blinkitRes || [] };
         output.zepto = { success: true, items: zeptoRes || [] };
 

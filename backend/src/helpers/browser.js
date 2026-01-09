@@ -10,20 +10,10 @@ async function getBrowser() {
     if (!browser) {
         try {
 
-        // console.log("Launching browser...");
-        // browser = await puppeteer_extra.launch({
-        //     headless: "new",
-        //     defaultViewport: null,
-        //     args: [
-        //         "--no-sandbox",
-        //         "--disable-setuid-sandbox",
-        //         "--disable-blink-features=AutomationControlled",
-        //         "--window-size=1920,1080"
-        //     ]
-        // });
-
-        browser = await puppeteer.launch({
-            headless: false,
+        console.log("Launching browser...");
+        browser = await puppeteer_extra.launch({
+            headless: "new",
+            defaultViewport: null,
             args: [
                 "--no-sandbox",
                 "--disable-setuid-sandbox",
@@ -31,6 +21,16 @@ async function getBrowser() {
                 "--window-size=1920,1080"
             ]
         });
+
+        // browser = await puppeteer.launch({
+        //     headless: false,
+        //     args: [
+        //         "--no-sandbox",
+        //         "--disable-setuid-sandbox",
+        //         "--disable-blink-features=AutomationControlled",
+        //         "--window-size=1920,1080"
+        //     ]
+        // });
 
         } catch (err) {
             browser = null;

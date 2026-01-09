@@ -17,7 +17,6 @@ const blinkitSearch = async (browser, location, query) => {
     const finalResult = parseResponse(result.searchResponse);
 
     console.log("Location & Query injected → correct prices received");
-    console.log(finalResult);
     return finalResult;
 };
 
