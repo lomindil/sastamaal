@@ -31,6 +31,7 @@ router.post("/", async (req, res) => {
             sameSite: "lax",
             maxAge: 24 * 60 * 60 * 1000 // 1 day
         });
+	
             console.log("Swiggy location set, podId:", podId);
             results.swiggy = "success";
         } else {
@@ -38,6 +39,27 @@ router.post("/", async (req, res) => {
             console.log("Swiggy location set failed, keeping default podId, no cookie set");
             results.swiggy = "failure";
         }
+
+        res.cookie("lat", lat, {
+            httpOnly: true,
+            secure: true,        // true in production
+            sameSite: "lax",
+            maxAge: 24 * 60 * 60 * 1000 // 1 day
+        });
+
+        res.cookie("lon", lng, {
+            httpOnly: true,
+            secure: true,        // true in production
+            sameSite: "lax",
+            maxAge: 24 * 60 * 60 * 1000 // 1 day
+        });
+
+        res.cookie("address", address, {
+            httpOnly: true,
+            secure: true,        // true in production
+            sameSite: "lax",
+            maxAge: 24 * 60 * 60 * 1000 // 1 day
+        });
 
         // placeholder for other services
         // not implemented yet, respond success:false (placeholder)
