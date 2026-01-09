@@ -46,24 +46,37 @@ router.post("/", async (req, res) => {
             console.warn("Invalid pod cookie, using default");
         }
 
+        // Creating single browser instance for all services
         browser = await getBrowser();
 
-        const blinkitRes = await blinkitSearch(browser, location_info, query);
-        const zeptoRes = await zeptoSearchItems(browser, location_info, query);
+        // const swiggyResult = await swiggyService.searchItems(browser, podId, query);
+        // const blinkitRes = await blinkitSearch(browser, location_info, query);
+        // const zeptoRes = await zeptoSearchItems(browser, location_info, query);
 
+        const [
+            blinkitRes,
+            zeptoRes
+        ] = await Promise.all([
+            blinkitSearch(browser, location_info, query),
+            zeptoSearchItems(browser, location_info, query)
+        ]);
+
+        // output.swiggy = { success: true, items: swiggyResult || [] };
         output.blinkit = { success: true, items: blinkitRes || [] };
         output.zepto = { success: true, items: zeptoRes || [] };
 
         return res.json(output);
 
-    } catch (err) {
+    }
+    catch (err) {
         console.error("search route error:", err);
         return res.status(500).json({
             success: false,
             error: err.message || "internal server error",
             ...output
         });
-    } finally {
+    }
+    finally {
         if (browser) await closeBrowser();
     }
 });

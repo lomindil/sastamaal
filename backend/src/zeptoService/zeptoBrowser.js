@@ -43,7 +43,7 @@ const runZeptoSearch = async (browser, location, query) => {
             timeout: 60000
         });
 
-        await sleep(1000);
+        await sleep(500);
 
         await page.setCookie(
             {
@@ -80,7 +80,7 @@ const runZeptoSearch = async (browser, location, query) => {
             timeout: 60000
         });
 
-        await sleep(1000);
+        await sleep(500);
         await page.goto(
         `https://www.zepto.com/search?query=${encodeURIComponent(query)}`,
         {

@@ -15,7 +15,6 @@ const zeptoSearchItems = async (browser, location, query) => {
     const finalResult = parseResponse(result.searchApiResponse);
 
     console.log("Location & Query injected → correct prices received");
-    console.log(finalResult);
     return finalResult;
 };
 
@@ -26,17 +25,17 @@ module.exports = {
 
 
 
-// 🔥 TEST CALL (same script)
-if (require.main === module) {
-    (async () => {
-        const location = {
-            lat: "28.4646148",
-            lon: "77.0299194",
-            address: "Gurgaon, Haryana, India"
-        };
+// // 🔥 TEST CALL (same script)
+// if (require.main === module) {
+//     (async () => {
+//         const location = {
+//             lat: "28.4646148",
+//             lon: "77.0299194",
+//             address: "Gurgaon, Haryana, India"
+//         };
 
-        const browser = await getBrowser();
-        await zeptoSearchItems(browser, location, "potato");
-        await closeBrowser();
-    })();
-}
+//         const browser = await getBrowser();
+//         await zeptoSearchItems(browser, location, "potato");
+//         await closeBrowser();
+//     })();
+// }

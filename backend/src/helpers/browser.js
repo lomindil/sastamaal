@@ -11,9 +11,9 @@ async function getBrowser() {
         try {
 
         // console.log("Launching browser...");
-        // const browser = await puppeteer_extra.launch({
+        // browser = await puppeteer_extra.launch({
         //     headless: "new",
-        //     // defaultViewport: null,
+        //     defaultViewport: null,
         //     args: [
         //         "--no-sandbox",
         //         "--disable-setuid-sandbox",
@@ -31,6 +31,7 @@ async function getBrowser() {
                 "--window-size=1920,1080"
             ]
         });
+
         } catch (err) {
             browser = null;
             throw err;
