@@ -1,5 +1,6 @@
 const { runZeptoSearch } = require("./zeptoBrowser.js");
-const { parseResponse } = require("./helpers.js")
+const { parseResponse } = require("./helpers.js");
+const { getBrowser, closeBrowser } = require("../helpers/browser");
 
 const zeptoSearchItems = async (browser, location, query) => {
     console.log("Location:", location);
@@ -7,14 +8,14 @@ const zeptoSearchItems = async (browser, location, query) => {
 
     const result = await runZeptoSearch(browser, location, query);
 
-    console.log("Result Generated!!!");
     if (!result) {
         throw new Error("Search response not received");
     }
 
-    const finalResult = parseResponse(result.searchResponse);
+    const finalResult = parseResponse(result.searchApiResponse);
 
     console.log("Location & Query injected → correct prices received");
+    console.log(finalResult);
     return finalResult;
 };
 
@@ -26,17 +27,16 @@ module.exports = {
 
 
 // 🔥 TEST CALL (same script)
-// (async () => {
-//     const location = {
-//         latitude: 12.966106132790609,
-//         longitude: 77.71661152444409
-//     };
+if (require.main === module) {
+    (async () => {
+        const location = {
+            lat: "28.4646148",
+            lon: "77.0299194",
+            address: "Gurgaon, Haryana, India"
+        };
 
-//     const query = "milk";
-
-//     console.log("🚀 Starting Zepto test...");
-//     const data = await zeptoSearchItems(location, query);
-
-//     console.log("🧾 FINAL OUTPUT:");
-//     console.dir(data, { depth: null });
-// })();
+        const browser = await getBrowser();
+        await zeptoSearchItems(browser, location, "potato");
+        await closeBrowser();
+    })();
+}

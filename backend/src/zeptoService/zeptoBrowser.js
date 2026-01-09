@@ -11,16 +11,7 @@ const runZeptoSearch = async (browser, location, query) => {
             "Chrome/122.0.0.0 Safari/537.36"
         );
 
-        const normalizedQuery = query.trim().toLowerCase();
-
-        let resolveSearch;
-        let rejectSearch;
-
-        const searchPromise = new Promise((resolve, reject) => {
-            resolveSearch = resolve;
-            rejectSearch = reject;
-        });
-
+        let searchApiResponse = null;
         page.on("response", async (response) => {
             try {
                 const request = response.request();
@@ -34,22 +25,19 @@ const runZeptoSearch = async (browser, location, query) => {
                     if (!postData) return;
 
                     const body = JSON.parse(postData);
-                    if (!body?.query) return;
+                    if (!body?.query || body.query !== query) return;
 
-                    if (body.query.trim().toLowerCase() !== normalizedQuery) {
-                        return;
-                    }
+                    console.log("✅ REAL PRODUCT SEARCH CAPTURED");
+                    console.log("🔍 Query:", body.query);
 
-                    console.log("✅ Zepto search API captured:", body.query);
-
-                    const json = await response.json();
-                    resolveSearch(json);
+                    searchApiResponse = await response.json();
                 }
             } catch (err) {
-                rejectSearch(err);
+                console.log(err);
             }
         });
 
+        console.log("🌐 Opening Zepto homepage...");
         await page.goto("https://www.zepto.com/", {
             waitUntil: "domcontentloaded",
             timeout: 60000
@@ -91,23 +79,28 @@ const runZeptoSearch = async (browser, location, query) => {
             waitUntil: "networkidle2",
             timeout: 60000
         });
+
         await sleep(1000);
         await page.goto(
         `https://www.zepto.com/search?query=${encodeURIComponent(query)}`,
         {
             waitUntil: "networkidle2",
             timeout: 60000
+        });
+
+        const start = Date.now();
+        while (!searchApiResponse && Date.now() - start < 15000) {
+            await sleep(300);
         }
-        );
 
-        const result = await Promise.race([
-            searchPromise,
-            sleep(15000).then(() => {
-                throw new Error("Search API timeout");
-            })
-        ]);
+        if (!searchApiResponse) {
+        console.log("❌ Search API response not captured");
+            return null;
+        }
 
-        return result;
+        return { 
+            searchApiResponse
+        };
 
     } catch (err) {
         console.error("❌ Zepto search failed:", err.message);
