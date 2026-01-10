@@ -6,12 +6,13 @@ const { blinkitSearch } = require("../blinkitService/blinkitSearch");
 const { zeptoSearchItems } = require("../zeptoService/zeptoSearch");
 
 const { decodePodId } = require("../../utils/cookie");
-const { getBrowser, closeBrowser } = require("../helpers/browser");
+const { getBrowserIncognitoContext, getNonStealthBrowserIncognitoContext } = require("../helpers/browser");
 
 const DEFAULT_POD_ID = 1374258;
 
 router.post("/", async (req, res) => {
-    let browser;
+    let browserIncognitoContext;
+    let nonStealthBrowserIncognitoContext;
     const output = {
         swiggy: { success: false, items: [] },
         blinkit: { success: false, items: [] },
@@ -46,21 +47,29 @@ router.post("/", async (req, res) => {
             console.warn("Invalid pod cookie, using default");
         }
 
-        // Creating single browser instance for all services
-        browser = await getBrowser();
+        // Creating single browser instance for all services(except swigy)
+        // browser = await getBrowser();
+        // nonStealthBrowser = await getNonStealthBrowser();
 
+        const [
+            browserIncognitoContext,
+            nonStealthBrowserIncognitoContext
+        ] = await Promise.all([
+            getBrowserIncognitoContext(),
+            getNonStealthBrowserIncognitoContext()
+        ]);
         // const swiggyRes = await swiggyService.searchItems(browser, podId, query);
         // const blinkitRes = await blinkitSearch(browser, location_info, query);
         // const zeptoRes = await zeptoSearchItems(browser, location_info, query);
 
         const [
-            // swiggyRes,
+            swiggyRes,
             blinkitRes,
             zeptoRes
-        ] = await Promise.all([
-            swiggyService.searchItems(browser, podId, query),
-            blinkitSearch(browser, location_info, query),
-            zeptoSearchItems(browser, location_info, query)
+        ] = await Promise.allSettled([
+            swiggyService.searchItems(nonStealthBrowserIncognitoContext, podId, query), //swiggy uses its own browser instance
+            blinkitSearch(browserIncognitoContext, location_info, query),
+            zeptoSearchItems(browserIncognitoContext, location_info, query)
         ]);
 
 
@@ -91,7 +100,12 @@ router.post("/", async (req, res) => {
         });
     }
     finally {
-        if (browser) await closeBrowser();
+        if (browserIncognitoContext) {
+            await browserIncognitoContext.close();
+        }
+        if (nonStealthBrowserIncognitoContext) {
+            await nonStealthBrowserIncognitoContext.close();
+        }
     }
 });
 
