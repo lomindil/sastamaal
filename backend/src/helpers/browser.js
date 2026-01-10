@@ -12,15 +12,18 @@ async function getBrowser() {
 
         console.log("Launching browser...");
         browser = await puppeteer_extra.launch({
+            executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
             headless: "new",
             defaultViewport: null,
             args: [
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                "--disable-blink-features=AutomationControlled",
-                "--window-size=1920,1080"
+              "--no-sandbox",
+              "--disable-setuid-sandbox",
+              "--disable-blink-features=AutomationControlled",
+              "--disable-dev-shm-usage",
+              "--disable-gpu",
+              "--single-process"
             ]
-        });
+          });
 
         // browser = await puppeteer.launch({
         //     headless: false,

@@ -58,7 +58,7 @@ router.post("/", async (req, res) => {
             blinkitRes,
             zeptoRes
         ] = await Promise.all([
-            swiggyService.searchItems(browser, podId, query),
+            // swiggyService.searchItems(browser, podId, query),
             blinkitSearch(browser, location_info, query),
             zeptoSearchItems(browser, location_info, query)
         ]);
@@ -75,7 +75,7 @@ router.post("/", async (req, res) => {
         // );
         
 
-        output.swiggy = { success: true, items: swiggyRes || [] };
+        // output.swiggy = { success: true, items: swiggyRes || [] };
         output.blinkit = { success: true, items: blinkitRes || [] };
         output.zepto = { success: true, items: zeptoRes || [] };
 
