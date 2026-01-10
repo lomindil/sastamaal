@@ -2,12 +2,11 @@ const { runBlinkitSearch } = require("./blinkitBrowser");
 const { parseResponse } = require("./helpers");
 const { getBrowser, closeBrowser } = require("../helpers/browser");
 
-const blinkitSearch = async (browser, location, query) => {
+const blinkitSearch = async (browserIncognitoContext, location, query) => {
     console.log("Location:", location);
     console.log("Query:", query);
     
-    const result = await runBlinkitSearch(browser, location, query);
-
+    const result = await runBlinkitSearch(browserIncognitoContext, location, query);
     console.log("Result Generated!!!");
 
     if (!result || !result.searchResponse) {
