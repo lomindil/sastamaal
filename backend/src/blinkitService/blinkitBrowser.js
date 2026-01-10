@@ -1,25 +1,9 @@
-const puppeteer = require("puppeteer-extra");
-const StealthPlugin = require("puppeteer-extra-plugin-stealth");
-
-puppeteer.use(StealthPlugin());
-
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const runBlinkitSearch = async ({ location, query }) => {
+const runBlinkitSearch = async (browser, location, query) => {
+    let page;
     try {
-        console.log("Launching browser...");
-        const browser = await puppeteer.launch({
-            headless: "new",
-            // defaultViewport: null,
-            args: [
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                "--disable-blink-features=AutomationControlled",
-                "--window-size=1920,1080"
-            ]
-        });
-
-        const page = await browser.newPage();
+        page = await browser.newPage();
 
         let authKeyResponse = null;
         let searchResponse = null;
@@ -46,12 +30,11 @@ const runBlinkitSearch = async ({ location, query }) => {
 
         console.log("Navigating to Blinkit...");
         await page.goto("https://blinkit.com", {
-            waitUntil: "domcontentloaded"
+            waitUntil: "domcontentloaded",
         });
 
-        await sleep(3000);
+        await sleep(1500);
 
-        console.log("Setting cookies...");
         await page.setCookie(
             {
                 name: "gr_1_lat",
@@ -73,18 +56,12 @@ const runBlinkitSearch = async ({ location, query }) => {
             Lon: String(location.lon),
         });
 
-        console.log("Navigating to search page...");
         await page.goto(
             `https://blinkit.com/s/?q=${encodedQuery}`,
             { waitUntil: "domcontentloaded" }
         );
 
-        await sleep(3000);
-
-        const cookies = await page.cookies();
-        console.log("Cookies retrieved.");
-
-        await browser.close();
+        await sleep(1500);
 
         return {
             authKeyResponse,
@@ -93,6 +70,10 @@ const runBlinkitSearch = async ({ location, query }) => {
     } catch (error) {
         console.error("An error occurred:", error);
         throw error;
+    } finally {
+        if (page) {
+            await page.close();
+        }
     }
 };
 

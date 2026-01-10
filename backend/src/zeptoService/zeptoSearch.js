@@ -1,36 +1,31 @@
-const { runBlinkitSearch } = require("./blinkitBrowser");
-const { parseResponse } = require("./helpers");
+const { runZeptoSearch } = require("./zeptoBrowser.js");
+const { parseResponse } = require("./helpers.js");
 const { getBrowser, closeBrowser } = require("../helpers/browser");
 
-const blinkitSearch = async (browser, location, query) => {
+const zeptoSearchItems = async (browser, location, query) => {
     console.log("Location:", location);
     console.log("Query:", query);
-    
-    const result = await runBlinkitSearch(browser, location, query);
 
-    console.log("Result Generated!!!");
+    const result = await runZeptoSearch(browser, location, query);
 
-    if (!result || !result.searchResponse) {
+    if (!result) {
         throw new Error("Search response not received");
     }
 
-    const finalResult = parseResponse(result.searchResponse);
+    const finalResult = parseResponse(result.searchApiResponse);
 
     console.log("Location & Query injected → correct prices received");
     return finalResult;
 };
 
-
 module.exports = {
-    blinkitSearch,
+    zeptoSearchItems,
 };
 
 
 
 
-
-
-// Call the function
+// // 🔥 TEST CALL (same script)
 // if (require.main === module) {
 //     (async () => {
 //         const location = {
@@ -40,7 +35,7 @@ module.exports = {
 //         };
 
 //         const browser = await getBrowser();
-//         await blinkitSearch(browser, location, "potato");
+//         await zeptoSearchItems(browser, location, "potato");
 //         await closeBrowser();
 //     })();
 // }

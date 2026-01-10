@@ -1,17 +1,23 @@
 const express = require("express");
 const router = express.Router();
+
 const swiggyService = require("../services/swiggyService");
 const { blinkitSearch } = require("../blinkitService/blinkitSearch");
+const { zeptoSearchItems } = require("../zeptoService/zeptoSearch");
+
 const { decodePodId } = require("../../utils/cookie");
+const { getBrowser, closeBrowser } = require("../helpers/browser");
 
 const DEFAULT_POD_ID = 1374258;
 
 router.post("/", async (req, res) => {
-    let output = {
+    let browser;
+    const output = {
         swiggy: { success: false, items: [] },
         blinkit: { success: false, items: [] },
         zepto: { success: false, items: [] }
     };
+
     try {
         const { query } = req.body;
         if (!query) {
@@ -21,19 +27,13 @@ router.post("/", async (req, res) => {
             });
         }
 
-        const {
-            lat,
-            lon,
-            address
-        } = req.cookies || {};
-
+        const { lat, lon, address } = req.cookies || {};
         if (!lat || !lon || !address) {
             return res.status(400).json({
                 success: false,
                 error: "location cookies missing (lat, lon, address required)"
             });
         }
-
         const location_info = { lat, lon, address };
 
         let podId = DEFAULT_POD_ID;
@@ -42,29 +42,56 @@ router.post("/", async (req, res) => {
                 podId = decodePodId(req.cookies.swiggy_pod);
                 console.log("Using podId from cookie:", podId);
             }
-        } catch (e) {
+        } catch {
             console.warn("Invalid pod cookie, using default");
-            podId = DEFAULT_POD_ID;
         }
 
-        const swiggyPromise = swiggyService.searchItems(podId, query);
-        const blinkitPromise = blinkitSearch(location_info, query);
+        // Creating single browser instance for all services
+        browser = await getBrowser();
 
-        const swiggyResult = await swiggyPromise;
+        // const swiggyRes = await swiggyService.searchItems(browser, podId, query);
+        // const blinkitRes = await blinkitSearch(browser, location_info, query);
+        // const zeptoRes = await zeptoSearchItems(browser, location_info, query);
 
-        output.swiggy = { success: true, items: swiggyResult };
+        const [
+            // swiggyRes,
+            blinkitRes,
+            zeptoRes
+        ] = await Promise.all([
+            swiggyService.searchItems(browser, podId, query),
+            blinkitSearch(browser, location_info, query),
+            zeptoSearchItems(browser, location_info, query)
+        ]);
 
-        const blinkitResult = await blinkitPromise;
-        output.blinkit = { success: true, items: blinkitResult };
+
+        // const results = await Promise.allSettled([
+        //     swiggyService.searchItems(browser, podId, query),
+        //     blinkitSearch(browser, location_info, query),
+        //     zeptoSearchItems(browser, location_info, query)
+        // ]);
+        
+        // const [swiggyRes, blinkitRes, zeptoRes] = results.map(r =>
+        //     r.status === "fulfilled" ? r.value : null
+        // );
+        
+
+        output.swiggy = { success: true, items: swiggyRes || [] };
+        output.blinkit = { success: true, items: blinkitRes || [] };
+        output.zepto = { success: true, items: zeptoRes || [] };
 
         return res.json(output);
-    } catch (err) {
+
+    }
+    catch (err) {
         console.error("search route error:", err);
         return res.status(500).json({
             success: false,
             error: err.message || "internal server error",
             ...output
         });
+    }
+    finally {
+        if (browser) await closeBrowser();
     }
 });
 
