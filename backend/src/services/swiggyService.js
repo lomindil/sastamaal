@@ -13,7 +13,8 @@ module.exports = {
         }
     },
 
-    async searchItems(browser, podId, query) {
+    async searchItems( podId, query) {
+        const browser = await getBrowser();
         const page = await browser.newPage();
         try {
             return await searchItems(page, { podId, query });

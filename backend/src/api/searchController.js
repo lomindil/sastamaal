@@ -46,7 +46,7 @@ router.post("/", async (req, res) => {
             console.warn("Invalid pod cookie, using default");
         }
 
-        // Creating single browser instance for all services
+        // Creating single browser instance for all services(except swigy)
         browser = await getBrowser();
 
         // const swiggyRes = await swiggyService.searchItems(browser, podId, query);
@@ -54,11 +54,11 @@ router.post("/", async (req, res) => {
         // const zeptoRes = await zeptoSearchItems(browser, location_info, query);
 
         const [
-            // swiggyRes,
+            swiggyRes,
             blinkitRes,
             zeptoRes
-        ] = await Promise.all([
-            swiggyService.searchItems(browser, podId, query),
+        ] = await Promise.allSettled([
+            swiggyService.searchItems( podId, query), //swiggy uses its own browser instance
             blinkitSearch(browser, location_info, query),
             zeptoSearchItems(browser, location_info, query)
         ]);
