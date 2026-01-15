@@ -13,8 +13,9 @@ module.exports = {
         }
     },
 
-    async searchItems(browser, podId, query) {
-        const page = await browser.newPage();
+    async searchItems(nonStealthBrowserIncognitoContext, podId, query) {
+        //const browser = await getBrowser();
+        const page = await nonStealthBrowserIncognitoContext.newPage();
         try {
             return await searchItems(page, { podId, query });
         } finally {

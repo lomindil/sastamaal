@@ -2,12 +2,11 @@ const { runZeptoSearch } = require("./zeptoBrowser.js");
 const { parseResponse } = require("./helpers.js");
 const { getBrowser, closeBrowser } = require("../helpers/browser");
 
-const zeptoSearchItems = async (browser, location, query) => {
+const zeptoSearchItems = async (browserIncognitoContext, location, query) => {
     console.log("Location:", location);
     console.log("Query:", query);
 
-    const result = await runZeptoSearch(browser, location, query);
-
+    const result = await runZeptoSearch(browserIncognitoContext, location, query);
     if (!result) {
         throw new Error("Search response not received");
     }

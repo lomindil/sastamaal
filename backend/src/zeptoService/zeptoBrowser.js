@@ -1,9 +1,9 @@
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const runZeptoSearch = async (browser, location, query) => {
+const runZeptoSearch = async (browserIncognitoContext, location, query) => {
     let page;
     try {
-        page = await browser.newPage();
+        page = await browserIncognitoContext.newPage();
 
         await page.setUserAgent(
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +

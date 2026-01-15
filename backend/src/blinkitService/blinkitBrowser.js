@@ -1,9 +1,9 @@
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-const runBlinkitSearch = async (browser, location, query) => {
+const runBlinkitSearch = async (browserIncognitoContext, location, query) => {
     let page;
     try {
-        page = await browser.newPage();
+        page = await browserIncognitoContext.newPage();
 
         let authKeyResponse = null;
         let searchResponse = null;

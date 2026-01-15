@@ -5,6 +5,7 @@ const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 puppeteer_extra.use(StealthPlugin());
 
 let browser = null;
+let nonStealthBrowser = null;
 
 async function getBrowser() {
     if (!browser) {
@@ -40,6 +41,39 @@ async function getBrowser() {
     return browser;
 }
 
+async function getNonStealthBrowser() {
+    if (!nonStealthBrowser) {
+        try {
+
+        console.log("Launching non-stealth browser...");
+        nonStealthBrowser = await puppeteer.launch({
+            headless: true,
+            args: [
+                "--no-sandbox",
+                "--disable-setuid-sandbox",
+                "--disable-blink-features=AutomationControlled",
+                "--window-size=1920,1080"
+            ]
+        });
+
+        } catch (err) {
+            nonStealthBrowser = null;
+            throw err;
+        }
+    }
+    return nonStealthBrowser;
+}
+
+async function getBrowserIncognitoContext() {
+    const browserInstance = await getBrowser();
+    return await browserInstance.createBrowserContext();
+}
+
+async function getNonStealthBrowserIncognitoContext() {
+    const browserInstance = await getNonStealthBrowser();
+    return await browserInstance.createBrowserContext();
+}
+
 async function closeBrowser() {
     if (browser) {
         await browser.close();
@@ -47,4 +81,4 @@ async function closeBrowser() {
     }
 }
 
-module.exports = { getBrowser, closeBrowser };
+module.exports = { getBrowserIncognitoContext, getNonStealthBrowserIncognitoContext };
