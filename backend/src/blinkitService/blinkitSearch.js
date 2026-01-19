@@ -1,23 +1,31 @@
 const { runBlinkitSearch } = require("./blinkitBrowser");
 const { parseResponse } = require("./helpers");
-const { getBrowser, closeBrowser } = require("../helpers/browser");
+const { getStealthContext } = require("../helpers/browser");
 
-const blinkitSearch = async (browserIncognitoContext, location, query) => {
+const blinkitSearch = async (location, query) => {
     console.log("Location:", location);
     console.log("Query:", query);
-    
-    const result = await runBlinkitSearch(browserIncognitoContext, location, query);
-    console.log("Result Generated!!!");
 
-    if (!result || !result.searchResponse) {
-        throw new Error("Search response not received");
+    const stealthContext = await getStealthContext();
+
+    try {
+        const result = await runBlinkitSearch(
+            stealthContext,
+            location,
+            query
+        );
+
+        console.log("Result Generated!!!");
+        if (!result || !result.searchResponse) {
+            throw new Error("Search response not received");
+        }
+
+        console.log("Location & Query injected → correct prices received");
+        return parseResponse(result.searchResponse);
+
+    } finally {
+        await stealthContext.close();
     }
-
-    console.log(result);
-    const finalResult = parseResponse(result.searchResponse);
-
-    console.log("Location & Query injected → correct prices received");
-    return finalResult;
 };
 
 

@@ -37,13 +37,13 @@ const runZeptoSearch = async (browserIncognitoContext, location, query) => {
             }
         });
 
-        console.log("🌐 Opening Zepto homepage...");
-        await page.goto("https://www.zepto.com/", {
-            waitUntil: "domcontentloaded",
-            timeout: 60000
-        });
+        // console.log("🌐 Opening Zepto homepage...");
+        // await page.goto("https://www.zepto.com/", {
+        //     waitUntil: "domcontentloaded",
+        //     timeout: 60000
+        // });
 
-        await sleep(100);
+        // await sleep(100);
 
         await page.setCookie(
             {

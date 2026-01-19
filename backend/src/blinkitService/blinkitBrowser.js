@@ -28,12 +28,12 @@ const runBlinkitSearch = async (browserIncognitoContext, location, query) => {
             }
         });
 
-        console.log("Navigating to Blinkit...");
-        await page.goto("https://blinkit.com", {
-            waitUntil: "domcontentloaded",
-        });
+        // console.log("Navigating to Blinkit...");
+        // await page.goto("https://blinkit.com", {
+        //     waitUntil: "domcontentloaded",
+        // });
 
-        await sleep(1500);
+        // await sleep(1500);
 
         await page.setCookie(
             {
@@ -61,12 +61,9 @@ const runBlinkitSearch = async (browserIncognitoContext, location, query) => {
             { waitUntil: "domcontentloaded" }
         );
 
-        await sleep(1500);
+        await sleep(500);
 
-        return {
-            authKeyResponse,
-            searchResponse,
-        };
+        return { searchResponse };
     } catch (error) {
         console.error("An error occurred:", error);
         throw error;
