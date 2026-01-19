@@ -13,6 +13,7 @@ const blinkitSearch = async (browserIncognitoContext, location, query) => {
         throw new Error("Search response not received");
     }
 
+    console.log(result);
     const finalResult = parseResponse(result.searchResponse);
 
     console.log("Location & Query injected → correct prices received");
