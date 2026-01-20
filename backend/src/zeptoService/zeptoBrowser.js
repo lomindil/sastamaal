@@ -1,10 +1,11 @@
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const { blockUnwantedResources } = require("../helpers/blockResources");
 
-const runZeptoSearch = async (browser, location, query) => {
+const runZeptoSearch = async (browserIncognitoContext, location, query) => {
     let page;
     try {
-        page = await browser.newPage();
-
+        page = await browserIncognitoContext.newPage();
+        await blockUnwantedResources(page);
         await page.setUserAgent(
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
             "AppleWebKit/537.36 (KHTML, like Gecko) " +
@@ -37,13 +38,13 @@ const runZeptoSearch = async (browser, location, query) => {
             }
         });
 
-        console.log("🌐 Opening Zepto homepage...");
-        await page.goto("https://www.zepto.com/", {
-            waitUntil: "domcontentloaded",
-            timeout: 60000
-        });
+        // console.log("🌐 Opening Zepto homepage...");
+        // await page.goto("https://www.zepto.com/", {
+        //     waitUntil: "domcontentloaded",
+        //     timeout: 60000
+        // });
 
-        await sleep(500);
+        // await sleep(100);
 
         await page.setCookie(
             {
@@ -80,13 +81,13 @@ const runZeptoSearch = async (browser, location, query) => {
             timeout: 60000
         });
 
-        await sleep(500);
+        await sleep(100);
         await page.goto(
-        `https://www.zepto.com/search?query=${encodeURIComponent(query)}`,
-        {
-            waitUntil: "networkidle2",
-            timeout: 60000
-        });
+            `https://www.zepto.com/search?query=${encodeURIComponent(query)}`,
+            {
+                waitUntil: "networkidle2",
+                timeout: 60000
+            });
 
         const start = Date.now();
         while (!searchApiResponse && Date.now() - start < 15000) {
@@ -94,11 +95,11 @@ const runZeptoSearch = async (browser, location, query) => {
         }
 
         if (!searchApiResponse) {
-        console.log("❌ Search API response not captured");
+            console.log("❌ Search API response not captured");
             return null;
         }
 
-        return { 
+        return {
             searchApiResponse
         };
 

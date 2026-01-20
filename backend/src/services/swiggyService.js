@@ -1,6 +1,7 @@
 const { getBrowser } = require("../scrapers/swiggyBrowser");
 const selectLocation = require("../scrapers/swiggyLocation");
 const searchItems = require("../scrapers/swiggySearch");
+const { getNonStealthContext } = require("../helpers/browser");
 
 module.exports = {
     async submitLocation({ lat, lng, address }) {
@@ -13,8 +14,10 @@ module.exports = {
         }
     },
 
-    async searchItems(browser, podId, query) {
-        const page = await browser.newPage();
+    async searchItems(podId, query) {
+        //const browser = await getBrowser();
+        const NonStealthContext = await getNonStealthContext();
+        const page = await NonStealthContext.newPage();
         try {
             return await searchItems(page, { podId, query });
         } finally {
