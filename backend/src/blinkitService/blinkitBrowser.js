@@ -1,39 +1,30 @@
+const { blockUnwantedResources } = require("../helpers/blockResources");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const runBlinkitSearch = async (browserIncognitoContext, location, query) => {
     let page;
     try {
         page = await browserIncognitoContext.newPage();
+        await blockUnwantedResources(page);
 
-        let authKeyResponse = null;
         let searchResponse = null;
-
         const encodedQuery = encodeURIComponent(query);
 
         page.on("response", async (res) => {
             try {
                 const url = res.url();
 
-                if (url.includes("/v2/accounts/auth_key/")) {
-                    authKeyResponse = await res.json();
-                    console.log("Auth key response received.");
-                }
-
-                if (url.includes(`/v1/layout/search?q=${encodedQuery}`)) {
+                if (
+                    url.includes("/v1/layout/search") &&
+                    url.includes(`q=${encodedQuery}`)
+                ) {
+                    console.log("🔍 Blinkit search API captured");
                     searchResponse = await res.json();
-                    console.log("Search response received.");
                 }
             } catch (err) {
-                console.error("Error parsing response JSON:", err);
+                console.error("❌ Error parsing Blinkit response:", err.message);
             }
         });
-
-        console.log("Navigating to Blinkit...");
-        await page.goto("https://blinkit.com", {
-            waitUntil: "domcontentloaded",
-        });
-
-        await sleep(1500);
 
         await page.setCookie(
             {
@@ -58,20 +49,28 @@ const runBlinkitSearch = async (browserIncognitoContext, location, query) => {
 
         await page.goto(
             `https://blinkit.com/s/?q=${encodedQuery}`,
-            { waitUntil: "domcontentloaded" }
+            { waitUntil: "domcontentloaded", timeout: 60000 }
         );
 
-        await sleep(1500);
+        // ✅ WAIT like Zepto
+        const start = Date.now();
+        while (!searchResponse && Date.now() - start < 15000) {
+            await sleep(300);
+        }
 
-        return {
-            authKeyResponse,
-            searchResponse,
-        };
+        if (!searchResponse) {
+            console.log("❌ Blinkit search API not captured");
+            return null;
+        }
+
+        return { searchResponse };
+
     } catch (error) {
-        console.error("An error occurred:", error);
-        throw error;
+        console.error("❌ Blinkit search failed:", error.message);
+        return null;
     } finally {
         if (page) {
+            page.removeAllListeners("response"); // 🔐 critical
             await page.close();
         }
     }
