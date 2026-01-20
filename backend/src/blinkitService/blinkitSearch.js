@@ -7,13 +7,8 @@ const blinkitSearch = async (location, query) => {
     console.log("Query:", query);
 
     const stealthContext = await getStealthContext();
-
     try {
-        const result = await runBlinkitSearch(
-            stealthContext,
-            location,
-            query
-        );
+        const result = await runBlinkitSearch(stealthContext, location, query);
 
         console.log("Result Generated!!!");
         if (!result || !result.searchResponse) {
@@ -36,9 +31,7 @@ module.exports = {
 
 
 
-
-
-// Call the function
+// // Call the function
 // if (require.main === module) {
 //     (async () => {
 //         const location = {

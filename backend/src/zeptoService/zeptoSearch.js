@@ -7,8 +7,7 @@ const zeptoSearchItems = async (location, query) => {
     console.log("Query:", query);
 
     const stealthContext = await getStealthContext();
-
-    try{
+    try {
         const result = await runZeptoSearch(stealthContext, location, query);
         if (!result) {
             throw new Error("Search response not received");
@@ -16,7 +15,7 @@ const zeptoSearchItems = async (location, query) => {
         console.log("Location & Query injected → correct prices received");
 
         return parseResponse(result.searchApiResponse);
-        
+
     } finally {
         await stealthContext.close();
     }
@@ -28,7 +27,6 @@ module.exports = {
 
 
 
-
 // // 🔥 TEST CALL (same script)
 // if (require.main === module) {
 //     (async () => {
@@ -37,7 +35,6 @@ module.exports = {
 //             lon: "77.0299194",
 //             address: "Gurgaon, Haryana, India"
 //         };
-
 //         const browser = await getBrowser();
 //         await zeptoSearchItems(browser, location, "potato");
 //         await closeBrowser();

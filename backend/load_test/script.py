@@ -3,7 +3,7 @@ import json
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-URL = "https://39fba617d9ed.ngrok-free.app/api/search"
+URL = "http://localhost:3000/api/search"
 
 HEADERS = {
     "Content-Type": "application/json",
@@ -13,10 +13,9 @@ HEADERS = {
 
 PAYLOAD = {"query": "milk"}
 
-CONCURRENT_USERS = 5
-TOTAL_REQUESTS = 10
+CONCURRENT_USERS = 10
+TOTAL_REQUESTS = 40
 TIMEOUT = 60
-
 
 def invoke_api(user_id):
     start_time = time.time()
@@ -68,10 +67,14 @@ def start_load_test():
 
     total_time = time.time() - start_test
 
+    # Calculate average response time (excluding ones with None duration)
+    response_times = [entry["duration"] for entry in errors if entry.get("duration") is not None]
+    avg_time = sum(response_times) / len(response_times) if response_times else 0
+
     print("📊 Load Test Summary")
     print("-------------------")
     print(f"Total Requests: {TOTAL_REQUESTS}")
-    print(f"Errors: {len(errors)}")
+    print(f"Average Response Time: {avg_time:.2f}s")
     print(f"Total Test Time: {total_time:.2f}s")
 
     if errors:

@@ -6,10 +6,7 @@ const { blinkitSearch } = require("../blinkitService/blinkitSearch");
 const { zeptoSearchItems } = require("../zeptoService/zeptoSearch");
 
 const { decodePodId } = require("../../utils/cookie");
-const {
-    getStealthContext,
-    getNonStealthContext
-} = require("../helpers/browser");
+const { getStealthContext, getNonStealthContext } = require("../helpers/browser");
 
 const DEFAULT_POD_ID = 1374258;
 
@@ -53,12 +50,12 @@ router.post("/", async (req, res) => {
         }
 
         const results = await Promise.allSettled([
-            // swiggyService.searchItems(nonStealthContext, podId, query),
+            // swiggyService.searchItems(podId, query),
             blinkitSearch(location_info, query),
             zeptoSearchItems(location_info, query)
         ]);
 
-        const [ blinkitRes, zeptoRes ] = results;
+        const [ blinkitRes, zeptoRes  ] = results;
 
         // if (swiggyRes.status === "fulfilled") {
         //     output.swiggy = { success: true, items: swiggyRes.value };
