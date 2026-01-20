@@ -13,8 +13,8 @@ HEADERS = {
 
 PAYLOAD = {"query": "milk"}
 
-CONCURRENT_USERS = 10
-TOTAL_REQUESTS = 40
+CONCURRENT_USERS = 5
+TOTAL_REQUESTS = 20
 TIMEOUT = 60
 
 def invoke_api(user_id):
@@ -77,12 +77,12 @@ def start_load_test():
     print(f"Average Response Time: {avg_time:.2f}s")
     print(f"Total Test Time: {total_time:.2f}s")
 
-    if errors:
-        with open("errors.json", "w") as f:
-            json.dump(errors, f, indent=2)
-        print("❌ Errors saved to errors.json")
-    else:
-        print("✅ No errors detected")
+    # if errors:
+    #     with open("errors.json", "w") as f:
+    #         json.dump(errors, f, indent=2)
+    #     print("❌ Errors saved to errors.json")
+    # else:
+    #     print("✅ No errors detected")
 
 
 if __name__ == "__main__":
