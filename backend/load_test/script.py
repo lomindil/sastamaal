@@ -13,8 +13,8 @@ HEADERS = {
 
 PAYLOAD = {"query": "milk"}
 
-CONCURRENT_USERS = 5
-TOTAL_REQUESTS = 20
+CONCURRENT_USERS = 6
+TOTAL_REQUESTS = 30
 TIMEOUT = 60
 
 def invoke_api(user_id):
@@ -48,7 +48,7 @@ def start_load_test():
     print(f"Concurrent users: {CONCURRENT_USERS}")
     print(f"Total requests: {TOTAL_REQUESTS}\n")
 
-    errors = []
+    results = []
     start_test = time.time()
 
     with ThreadPoolExecutor(max_workers=CONCURRENT_USERS) as executor:
@@ -60,15 +60,14 @@ def start_load_test():
         for future in as_completed(futures):
             result = future.result()
             if result:
-                errors.append(result)
+                results.append(result)
 
-    with open("result.json", "w") as f:
-        json.dump(errors, f, indent=2)
+    with open("finalresult.json", "w") as f:
+        json.dump(results, f, indent=2)
 
     total_time = time.time() - start_test
 
-    # Calculate average response time (excluding ones with None duration)
-    response_times = [entry["duration"] for entry in errors if entry.get("duration") is not None]
+    response_times = [entry["duration"] for entry in results if entry.get("duration") is not None]
     avg_time = sum(response_times) / len(response_times) if response_times else 0
 
     print("📊 Load Test Summary")
@@ -77,12 +76,6 @@ def start_load_test():
     print(f"Average Response Time: {avg_time:.2f}s")
     print(f"Total Test Time: {total_time:.2f}s")
 
-    if errors:
-        with open("errors.json", "w") as f:
-            json.dump(errors, f, indent=2)
-        print("❌ Errors saved to errors.json")
-    else:
-        print("✅ No errors detected")
 
 
 if __name__ == "__main__":

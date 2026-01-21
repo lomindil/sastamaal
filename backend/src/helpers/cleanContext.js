@@ -1,11 +1,16 @@
 async function cleanContext(context) {
     try {
-        const cookies = await context.cookies();
-        if (cookies.length > 0) {
-            await context.clearCookies();
-        }
         const pages = await context.pages();
 
+        // 1️⃣ Clear cookies via CDP (Puppeteer way)
+        if (pages.length > 0) {
+            const page = pages[0];
+            const client = await page.target().createCDPSession();
+            await client.send("Network.clearBrowserCookies");
+            await client.send("Network.clearBrowserCache");
+        }
+
+        // 2️⃣ Clear localStorage & sessionStorage
         await Promise.all(
             pages.map(async (page) => {
                 try {
@@ -14,9 +19,12 @@ async function cleanContext(context) {
                         sessionStorage.clear();
                     });
                 } catch (_) {
+                    // page might already be closed
                 }
             })
         );
+
+        // 3️⃣ Clear permission overrides
         await context.clearPermissionOverrides();
 
     } catch (err) {
@@ -25,3 +33,4 @@ async function cleanContext(context) {
 }
 
 module.exports = { cleanContext };
+

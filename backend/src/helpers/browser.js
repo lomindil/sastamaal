@@ -94,7 +94,7 @@ async function initBrowsers() {
             ]
         });
 
-        stealthContextPool = new ContextPool(stealthBrowser, 6);
+        stealthContextPool = new ContextPool(stealthBrowser, 8);
         await stealthContextPool.init();
     }
 }
