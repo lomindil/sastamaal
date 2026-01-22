@@ -1,14 +1,17 @@
 const { runZeptoSearch } = require("./zeptoBrowser.js");
 const { parseResponse } = require("./helpers.js");
-const { getStealthContext } = require("../helpers/browser");
+const {
+    acquireStealthContext,
+    releaseStealthContext
+} = require("../helpers/browser");
 
 const zeptoSearchItems = async (location, query) => {
     console.log("Location:", location);
     console.log("Query:", query);
 
-    const stealthContext = await getStealthContext();
+    const context = await acquireStealthContext();
     try {
-        const result = await runZeptoSearch(stealthContext, location, query);
+        const result = await runZeptoSearch(context, location, query);
         if (!result) {
             throw new Error("Search response not received");
         }
@@ -17,7 +20,7 @@ const zeptoSearchItems = async (location, query) => {
         return parseResponse(result.searchApiResponse);
 
     } finally {
-        await stealthContext.close();
+        releaseStealthContext(context);
     }
 };
 

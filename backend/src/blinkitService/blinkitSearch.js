@@ -1,14 +1,17 @@
 const { runBlinkitSearch } = require("./blinkitBrowser");
 const { parseResponse } = require("./helpers");
-const { getStealthContext } = require("../helpers/browser");
+const {
+    acquireStealthContext,
+    releaseStealthContext
+} = require("../helpers/browser");
 
 const blinkitSearch = async (location, query) => {
     console.log("Location:", location);
     console.log("Query:", query);
 
-    const stealthContext = await getStealthContext();
+    const context = await acquireStealthContext();
     try {
-        const result = await runBlinkitSearch(stealthContext, location, query);
+        const result = await runBlinkitSearch(context, location, query);
 
         console.log("Result Generated!!!");
         if (!result || !result.searchResponse) {
@@ -19,7 +22,7 @@ const blinkitSearch = async (location, query) => {
         return parseResponse(result.searchResponse);
 
     } finally {
-        await stealthContext.close();
+        releaseStealthContext(context);
     }
 };
 

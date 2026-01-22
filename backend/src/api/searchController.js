@@ -4,16 +4,11 @@ const router = express.Router();
 const swiggyService = require("../services/swiggyService");
 const { blinkitSearch } = require("../blinkitService/blinkitSearch");
 const { zeptoSearchItems } = require("../zeptoService/zeptoSearch");
-
 const { decodePodId } = require("../../utils/cookie");
-const { getStealthContext, getNonStealthContext } = require("../helpers/browser");
 
 const DEFAULT_POD_ID = 1374258;
 
 router.post("/", async (req, res) => {
-    let stealthContext = null;
-    let nonStealthContext = null;
-
     const output = {
         swiggy: { success: false, items: [] },
         blinkit: { success: false, items: [] },

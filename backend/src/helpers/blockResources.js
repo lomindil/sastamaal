@@ -4,8 +4,6 @@ async function blockUnwantedResources(page) {
     page.on("request", (req) => {
         const type = req.resourceType();
         const url = req.url();
-
-        // ❌ Block heavy & useless stuff
         if (
             type === "image" ||
             type === "font" ||
