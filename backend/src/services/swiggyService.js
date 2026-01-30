@@ -14,12 +14,12 @@ module.exports = {
         }
     },
 
-    async searchItems(podId, query) {
+    async searchItems(location, query) {
         //const browser = await getBrowser();
         const NonStealthContext = await getNonStealthContext();
         const page = await NonStealthContext.newPage();
         try {
-            return await searchItems(page, { podId, query });
+            return await searchItems(page, { location, query });
         } finally {
             await page.close();
         }

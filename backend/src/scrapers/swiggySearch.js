@@ -1,127 +1,247 @@
-module.exports = async function search(page, { podId, query }) {
+const { blockUnwantedResources } = require("../helpers/blockResources");
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+module.exports = async function search(page, { location, query }) {
     
 
-    await page.setUserAgent(
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
-    );
+    // await page.setUserAgent(
+    //     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
+    // );
 
-    console.log("Visiting Instamart...");
+    // console.log("Visiting Instamart...");
+    // await page.goto("https://www.swiggy.com/instamart", {
+    //     waitUntil: "networkidle2",
+	// 	credentials: "include",
+    //     timeout: 30000
+    // });
+
+    // console.log("Waiting for Instamart app initialization...");
+    // await page.waitForFunction(() => window.App && window.App.deviceId, { timeout: 15000 });
+    // const url = `https://www.swiggy.com/api/instamart/search/v2?offset=0&ageConsent=false&voiceSearchTrackingId=&storeId=${podId}&primaryStoreId=${podId}`;
+
+    // const payload = {
+    //   facets: [],
+    //   sortAttribute: "",
+    //   query,                    // <--- change the search term here
+    //   search_results_offset: "0",
+    //   page_type: "INSTAMART_AUTO_SUGGEST_PAGE",
+    //   is_pre_search_tag: false
+    // };
+
+    // const responseData = await page.evaluate(async (payload,url) => {
+    //     const headers = {
+    //         "Content-Type": "application/json",
+    //         "x-client-id": "INSTAMART-APP",
+    //         "x-platform": "web",
+    //         "Accept": "application/json, text/plain, */*"
+    //     };
+
+    //     const res = await fetch(
+    //         url,
+    //         {
+    //             method: "POST",
+    //             headers,
+    //             body: JSON.stringify(payload),
+    //             credentials: "include"
+    //         }
+    //     );
+
+    //     const text = await res.text();
+
+    //         return {
+    //             status: res.status,
+    //             body: text
+    //         };
+    //     }, payload, url);
+
+    //     if (responseData.status !== 200) {
+    //         console.error("Swiggy API Request Failed:", responseData.status, "Response Text:", responseData.text);
+    //         // Throw an error or return an empty array if the API call failed
+    //         throw new Error(`API call failed with status ${responseData.status}. Response: ${responseData.text}`);
+    //     }
+
+    //     // const fs = require("fs");
+    //     // const path = require("path");
+
+    //     // // Save full raw response for debugging
+    //     // const logFile = path.join(__dirname, "../../logs", `swiggy_search_${Date.now()}.json`);
+    //     // fs.writeFileSync(logFile, responseData.body, "utf8");
+
+    //     //console.log("Saved raw Swiggy search JSON ->", logFile);
+    //     const json = JSON.parse(responseData.body);
+
+    //     const items = [];
+    //     function collect(obj) {
+    //         if (!obj) return;
+    //         if (Array.isArray(obj.items)) items.push(...obj.items);
+    //         if (typeof obj === "object") for (const k of Object.keys(obj)) collect(obj[k]);
+    //     }
+    //     collect(json);
+
+    //     function extractImageUrls(it) {
+    //         const variation = (it.variations && it.variations[0]) || {};
+
+    //         const possibleImages = [];
+
+    //         // 1. New Instamart-style array
+    //         if (Array.isArray(variation.imageIds)) {
+    //          possibleImages.push(...variation.imageIds);
+    //         }
+
+    //         if (Array.isArray(it.imageIds)) {
+    //             possibleImages.push(...it.imageIds);
+    //         }
+
+    //         // 2. Short imageId fields
+    //         if (it.imageId) possibleImages.push(it.imageId);
+    //         if (variation.imageId) possibleImages.push(variation.imageId);
+
+    //         // Normalize into full CDN URLs
+    //         return possibleImages.map(id =>
+    //             `https://media-assets.swiggy.com/swiggy/image/upload/${id}`
+    //             );
+    //         }
+
+    //     // normalize single item into unified schema
+    //     function normalizeItem(it) {
+    //         const variation = (it.variations && it.variations[0]) || {};
+    //         const mrp = variation.price?.mrp?.units ?? (variation.price?.mrp ?? null);
+    //         const offer = variation.price?.offerPrice?.units ?? (variation.price?.offerPrice ?? null);
+
+    //         const price = mrp !== null ? String(mrp) : null;
+    //         const offerPrice = offer !== null ? String(offer) : null;
+    //         const discount = mrp && offer ? (Number(mrp) - Number(offer)) : null;
+
+    //         return {
+    //             name: it.displayName || it.name || "",
+    //             description: it.shortDescription || it.description || "",
+    //             quantity: variation.quantityDescription || variation.displayQuantity || "",
+    //             price: price,
+    //             offerPrice: offerPrice,
+    //             discount: discount,
+    //             images: extractImageUrls(it)  
+    //         };
+    //     }
+
+
+    // // normalize items
+    // const normalized = items.map(normalizeItem);
+    // return normalized;
+
+        try {
+        await blockUnwantedResources(page);
+        await page.setUserAgent(
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " +
+            "AppleWebKit/537.36 (KHTML, like Gecko) " +
+            "Chrome/122.0.0.0 Safari/537.36"
+        );
+
+        let searchApiResponse = null;
+        page.on("response", async (response) => {
+            try {
+                const request = response.request();
+                const url = response.url();
+
+                if (
+                    url.includes("api/instamart/search/v2") &&
+                    request.method() === "POST"
+                ) {
+                    const postData = request.postData();
+                    if (!postData) return;
+
+                    const body = JSON.parse(postData);
+                    if (!body?.query || body.query !== query) return;
+
+                    console.log("✅ REAL PRODUCT SEARCH CAPTURED");
+                    console.log("🔍 Query:", body.query);
+
+                                const text = await response.text(); // safer than json()
+            searchApiResponse = JSON.parse(text);
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        });
+
+        // console.log("🌐 Opening Zepto homepage...");
+        // await page.goto("https://www.zepto.com/", {
+        //     waitUntil: "domcontentloaded",
+        //     timeout: 60000
+        // });
+
+        
+           console.log("Visiting Instamart...");
     await page.goto("https://www.swiggy.com/instamart", {
-        waitUntil: "networkidle2",
+        waitUntil: "domcontentloaded",
 		credentials: "include",
         timeout: 30000
     });
+     await sleep(2000);
 
-    console.log("Waiting for Instamart app initialization...");
-    await page.waitForFunction(() => window.App && window.App.deviceId, { timeout: 15000 });
-    const url = `https://www.swiggy.com/api/instamart/search/v2?offset=0&ageConsent=false&voiceSearchTrackingId=&storeId=${podId}&primaryStoreId=${podId}`;
-
-    const payload = {
-      facets: [],
-      sortAttribute: "",
-      query,                    // <--- change the search term here
-      search_results_offset: "0",
-      page_type: "INSTAMART_AUTO_SUGGEST_PAGE",
-      is_pre_search_tag: false
-    };
-
-    const responseData = await page.evaluate(async (payload,url) => {
-        const headers = {
-            "Content-Type": "application/json",
-            "x-client-id": "INSTAMART-APP",
-            "x-platform": "web",
-            "Accept": "application/json, text/plain, */*"
-        };
-
-        const res = await fetch(
-            url,
+        await page.setCookie(
             {
-                method: "POST",
-                headers,
-                body: JSON.stringify(payload),
-                credentials: "include"
+                name: "lat",
+                value: String(location.lat),
+                domain: ".swiggy.com",
+                path: "/",
+                secure: true,
+                sameSite: "Lax"
+            },
+            {
+                name: "lng",
+                value: String(location.lon),
+                domain: ".swiggy.com",
+                path: "/",
+                secure: true,
+                sameSite: "Lax"
+            },
+            {
+                name: "userLocation",
+                value: JSON.stringify({
+                    lat: location.lat,
+                    lon: location.lon,
+                    address: location.address
+                }),
+                domain: ".swiggy.com",
+                path: "/",
+                secure: true,
+                sameSite: "Lax"
             }
         );
 
-        const text = await res.text();
+        await page.reload({
+            waitUntil: "networkidle2",
+            timeout: 60000
+        });
 
-            return {
-                status: res.status,
-                body: text
-            };
-        }, payload, url);
+        await sleep(100);
+        await page.goto(
+            `https://www.swiggy.com/instamart/search?query=${encodeURIComponent(query)}`,
+            {
+                waitUntil: "networkidle2",
+                timeout: 60000
+            });
 
-        if (responseData.status !== 200) {
-            console.error("Swiggy API Request Failed:", responseData.status, "Response Text:", responseData.text);
-            // Throw an error or return an empty array if the API call failed
-            throw new Error(`API call failed with status ${responseData.status}. Response: ${responseData.text}`);
+        const start = Date.now();
+        while (!searchApiResponse && Date.now() - start < 15000) {
+            await sleep(300);
         }
 
-        // const fs = require("fs");
-        // const path = require("path");
-
-        // // Save full raw response for debugging
-        // const logFile = path.join(__dirname, "../../logs", `swiggy_search_${Date.now()}.json`);
-        // fs.writeFileSync(logFile, responseData.body, "utf8");
-
-        //console.log("Saved raw Swiggy search JSON ->", logFile);
-        const json = JSON.parse(responseData.body);
-
-        const items = [];
-        function collect(obj) {
-            if (!obj) return;
-            if (Array.isArray(obj.items)) items.push(...obj.items);
-            if (typeof obj === "object") for (const k of Object.keys(obj)) collect(obj[k]);
-        }
-        collect(json);
-
-        function extractImageUrls(it) {
-            const variation = (it.variations && it.variations[0]) || {};
-
-            const possibleImages = [];
-
-            // 1. New Instamart-style array
-            if (Array.isArray(variation.imageIds)) {
-             possibleImages.push(...variation.imageIds);
-            }
-
-            if (Array.isArray(it.imageIds)) {
-                possibleImages.push(...it.imageIds);
-            }
-
-            // 2. Short imageId fields
-            if (it.imageId) possibleImages.push(it.imageId);
-            if (variation.imageId) possibleImages.push(variation.imageId);
-
-            // Normalize into full CDN URLs
-            return possibleImages.map(id =>
-                `https://media-assets.swiggy.com/swiggy/image/upload/${id}`
-                );
-            }
-
-        // normalize single item into unified schema
-        function normalizeItem(it) {
-            const variation = (it.variations && it.variations[0]) || {};
-            const mrp = variation.price?.mrp?.units ?? (variation.price?.mrp ?? null);
-            const offer = variation.price?.offerPrice?.units ?? (variation.price?.offerPrice ?? null);
-
-            const price = mrp !== null ? String(mrp) : null;
-            const offerPrice = offer !== null ? String(offer) : null;
-            const discount = mrp && offer ? (Number(mrp) - Number(offer)) : null;
-
-            return {
-                name: it.displayName || it.name || "",
-                description: it.shortDescription || it.description || "",
-                quantity: variation.quantityDescription || variation.displayQuantity || "",
-                price: price,
-                offerPrice: offerPrice,
-                discount: discount,
-                images: extractImageUrls(it)  
-            };
+        if (!searchApiResponse) {
+            console.log("❌ Search API response not captured");
+            return null;
         }
 
+        return {
+            searchApiResponse
+        };
 
-    // normalize items
-    const normalized = items.map(normalizeItem);
-    return normalized;
+    } catch (err) {
+        console.error("❌ Swiggy search failed:", err.message);
+        return null;
+    } finally {
+        if (page) {
+            page.removeAllListeners("response");
+            await page.close();
+        }
+    }
 };

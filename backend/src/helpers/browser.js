@@ -12,7 +12,7 @@ async function initBrowsers() {
     if (!stealthBrowser) {
         console.log("🚀 Launching stealth browser...");
         stealthBrowser = await puppeteerExtra.launch({
-            headless: "new",
+            headless: "false",
             defaultViewport: null,
             args: [
                 "--no-sandbox",
@@ -27,7 +27,7 @@ async function initBrowsers() {
     if (!nonStealthBrowser) {
         console.log("🚀 Launching non-stealth browser...");
         nonStealthBrowser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             defaultViewport: null,
             args: [
                 "--no-sandbox",

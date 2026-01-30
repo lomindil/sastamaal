@@ -50,24 +50,24 @@ router.post("/", async (req, res) => {
         }
 
         const results = await Promise.allSettled([
-            // swiggyService.searchItems(podId, query),
-            blinkitSearch(location_info, query),
-            zeptoSearchItems(location_info, query)
+            swiggyService.searchItems(location_info, query),
+           // blinkitSearch(location_info, query),
+           // zeptoSearchItems(location_info, query)
         ]);
 
-        const [ blinkitRes, zeptoRes  ] = results;
+        const [ swiggyRes, blinkitRes, zeptoRes  ] = results;
 
-        // if (swiggyRes.status === "fulfilled") {
-        //     output.swiggy = { success: true, items: swiggyRes.value };
+        if (swiggyRes.status === "fulfilled") {
+            output.swiggy = { success: true, items: swiggyRes.value };
+        }
+
+        // if (blinkitRes.status === "fulfilled") {
+        //     output.blinkit = { success: true, items: blinkitRes.value };
         // }
 
-        if (blinkitRes.status === "fulfilled") {
-            output.blinkit = { success: true, items: blinkitRes.value };
-        }
-
-        if (zeptoRes.status === "fulfilled") {
-            output.zepto = { success: true, items: zeptoRes.value };
-        }
+        // if (zeptoRes.status === "fulfilled") {
+        //     output.zepto = { success: true, items: zeptoRes.value };
+        // }
 
         return res.json(output);
 
