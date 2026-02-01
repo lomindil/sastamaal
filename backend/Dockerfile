@@ -1,33 +1,29 @@
-FROM node:20-bullseye-slim
+FROM public.ecr.aws/lambda/nodejs:20
 
-RUN apt-get update && apt-get install -y \
+# Install Chromium & dependencies
+RUN dnf install -y \
     chromium \
-    libnss3 \
-    libatk1.0-0 \
-    libatk-bridge2.0-0 \
-    libx11-xcb1 \
-    libxcomposite1 \
-    libxdamage1 \
-    libxrandr2 \
-    libgbm1 \
-    libasound2 \
-    libpangocairo-1.0-0 \
-    libpango-1.0-0 \
-    libcairo2 \
-    libxss1 \
-    fonts-ipafont-gothic \
-    fonts-wqy-zenhei \
-    fonts-thai-tlwg \
-    fonts-kacst \
-    fonts-freefont-ttf \
-    --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
+    nss \
+    atk \
+    at-spi2-atk \
+    libXcomposite \
+    libXdamage \
+    libXrandr \
+    mesa-libgbm \
+    alsa-lib \
+    pango \
+    cairo \
+    libXcursor \
+    libXext \
+    libXi \
+    libXrender \
+    && dnf clean all
 
-WORKDIR /app
+WORKDIR /var/task
 
 ENV NODE_ENV=production
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 COPY package*.json ./
 RUN npm install --production
@@ -35,4 +31,4 @@ RUN npm install --production
 COPY . .
 
 # Lambda entry point
-CMD ["node", "src/server.js"]
+CMD ["lambda.handler"]

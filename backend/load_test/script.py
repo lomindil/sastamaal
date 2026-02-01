@@ -13,8 +13,8 @@ HEADERS = {
 
 PAYLOAD = {"query": "milk"}
 
-CONCURRENT_USERS = 6
-TOTAL_REQUESTS = 30
+CONCURRENT_USERS = 3
+TOTAL_REQUESTS = 12
 TIMEOUT = 60
 
 def invoke_api(user_id):
