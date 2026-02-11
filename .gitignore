@@ -4,3 +4,6 @@ puppeteer_scripts/node_modules/
 
 # JSON files in the log folder
 backend/logs/*.json
+backend/load_test
+finalresult.json
+
